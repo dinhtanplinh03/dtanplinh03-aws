@@ -256,7 +256,6 @@ Nếu bạn muốn cấu hình chính sách phân quyền tối thiểu (Least P
 6. Nhập tên cho chính sách (ví dụ: `TicketAppCleanupPolicy`), thêm mô tả tùy chọn, và nhấn **Create policy**.
 7. Tiến hành gán chính sách này vào **IAM User** của bạn (truy cập menu **Users** -> chọn User của bạn -> **Add permissions** -> **Attach policies directly** và chọn chính sách `TicketAppCleanupPolicy` vừa tạo).
 
-![Tạo IAM Policy](/images/5-Workshop/5.2-Prerequiste/iam_policy.png)
 
 ---
 
@@ -302,8 +301,6 @@ Hãy clone dự án từ repository workshop của bạn:
 git clone https://github.com/free-cloud-journey/ticket-app-workshop.git
 cd ticket-app-workshop
 ```
-
-![Tải mã nguồn](/images/5-Workshop/5.2-Prerequiste/git_clone.png)
 
 ---
 
