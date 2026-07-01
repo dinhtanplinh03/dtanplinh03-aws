@@ -1,32 +1,57 @@
 ---
 title: "Worklog Tuần 9"
 date: 2024-01-01
-weight: 9
+weight: 1
 chapter: false
 pre: " <b> 1.9. </b> "
 ---
-### Mục tiêu tuần 9:
+# Tuần 9
 
-* Lên ý tưởng và thiết kế toàn diện **sơ đồ kiến trúc hạ tầng đám mây** (Architecture Diagram) cho hệ thống đặt vé **Flash Sale**.
-* Quy hoạch mạng bảo mật **VPC** và thể hiện chi tiết luồng tích hợp **Amazon SQS**, **SNS** trên bản vẽ kiến trúc.
-* Phân tích sự đánh đổi kỹ thuật và chốt phương án thiết kế.
+## Mục tiêu tuần 9
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Lên ý tưởng và thiết kế toàn diện **Architecture Diagram** cho hệ thống đặt vé **Flash Sale** <br> - Xác định các thành phần chính: **EC2**, **RDS**, **S3**, **SQS**, **SNS**, **CloudFront** | 15/06/2026   | 15/06/2026      |                                           |
-| 3   | - Quy hoạch mạng bảo mật **VPC**: thiết kế **Public/Private Subnet**, **Security Group**, **NAT Gateway** <br> - Thể hiện chi tiết luồng tích hợp **Amazon SQS** trên bản vẽ kiến trúc      | 16/06/2026   | 16/06/2026      |                                           |
-| 4   | - Thể hiện chi tiết luồng tích hợp **Amazon SNS** trên bản vẽ kiến trúc để xử lý bất đồng bộ <br> - Hoàn thiện luồng: client → API → SQS → worker → SNS → thông báo khách hàng             | 17/06/2026   | 17/06/2026      |                                           |
-| 5   | - Phân tích sự đánh đổi kỹ thuật: **EC2 + Auto Scaling** vs **AWS Lambda** <br> - Đánh giá cold start, giới hạn thời gian chạy, chi phí, khả năng kiểm soát                 | 18/06/2026   | 18/06/2026      |                                           |
-| 6   | - Chốt phương án thiết kế: sử dụng máy chủ **EC2** kết hợp **Auto Scaling** thay vì AWS Lambda <br> - Đảm bảo hiệu năng liên tục của hệ thống Flash Sale                                   | 19/06/2026   | 19/06/2026      |                                           |
+* Hiểu các khái niệm về **Continuous Integration (CI)** và **Continuous Deployment (CD)**.
+* Học cách tự động hóa quá trình build, kiểm thử và triển khai ứng dụng bằng **GitHub Actions**.
+* Thực hành xây dựng quy trình **CI/CD** cho các ứng dụng triển khai trên nền tảng đám mây.
 
+## Công việc thực hiện trong tuần
 
-### Kết quả đạt được tuần 9:
+| Ngày | Công việc                                                                                                                                                                                          | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo                      |
+| ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | --------------------------------------- |
+| 58   | - Tìm hiểu các kiến thức cơ bản về DevOps.<br>- Giới thiệu các khái niệm CI/CD.<br>- Hiểu quy trình phát triển và triển khai phần mềm (Software Delivery Lifecycle).                               | 08/06/2026   | 08/06/2026      | https://cloudjourney.awsstudygroup.com/ |
+| 59   | - Tìm hiểu về GitHub Actions.<br>- Hiểu các thành phần: Workflows, Jobs và Runners.<br>- Khám phá GitHub Actions Marketplace.                                                                      | 09/06/2026   | 09/06/2026      | https://cloudjourney.awsstudygroup.com/ |
+| 60   | - **Thực hành:**<br> + Tạo một GitHub Actions Workflow đơn giản.<br> + Tự động hóa quá trình build dự án.<br> + Kiểm tra và xác nhận quá trình thực thi Workflow.                                  | 10/06/2026   | 10/06/2026      | https://cloudjourney.awsstudygroup.com/ |
+| 61   | - Tìm hiểu về tự động hóa triển khai (Deployment Automation).<br>- Cấu hình GitHub Secrets.<br>- Hiểu cách quản lý thông tin xác thực (Credentials) một cách an toàn.                              | 11/06/2026   | 11/06/2026      | https://cloudjourney.awsstudygroup.com/ |
+| 62   | - **Thực hành:**<br> + Xây dựng Pipeline CI/CD để triển khai ứng dụng.<br> + Tự động triển khai ứng dụng lên Amazon EC2.<br> + Kiểm thử toàn bộ quy trình triển khai từ đầu đến cuối (End-to-End). | 12/06/2026   | 12/06/2026      | https://cloudjourney.awsstudygroup.com/ |
 
-Tuần này mình tập trung hoàn toàn vào **thiết kế kiến trúc** — lên ý tưởng và vẽ toàn diện **Architecture Diagram** cho hệ thống đặt vé **Flash Sale**. Khác với mấy tuần trước chủ yếu code và thực hành, tuần này là nhìn tổng thể: dịch vụ nào nằm ở đâu, luồng dữ liệu chạy thế nào.
+## Kết quả đạt được trong tuần 9
 
-Phần quan trọng nhất là quy hoạch mạng bảo mật **VPC** (Public/Private Subnet, Security Group, NAT Gateway) và thể hiện chi tiết luồng tích hợp **Amazon SQS** + **SNS** trên bản vẽ: client → API → SQS queue → worker xử lý bất đồng bộ → SNS gửi thông báo cho khách. Nhìn trên sơ đồ thấy rõ hơn cách các dịch vụ kết nối với nhau.
+* Nắm vững các nguyên lý của **DevOps** và quy trình **CI/CD** trong phát triển phần mềm hiện đại.
 
-Chỗ mình phân tích lâu nhất là sự đánh đổi kỹ thuật giữa **EC2 + Auto Scaling** và **AWS Lambda**. Lambda nhẹ, tự scale, nhưng cold start và giới hạn thời gian chạy (15 phút) không phù hợp cho hệ thống Flash Sale cần xử lý liên tục, ổn định. Cuối cùng chốt dùng **EC2 kết hợp Auto Scaling** — vừa đảm bảo hiệu năng liên tục, vừa tự động mở rộng khi lượng truy cập tăng đột biến.
+* Hiểu rõ các khái niệm cốt lõi của **Continuous Integration** và **Continuous Deployment**, bao gồm:
+
+  * Quản lý mã nguồn (Source Code Management).
+  * Tự động hóa quá trình Build.
+  * Tự động hóa kiểm thử (Automated Testing).
+  * Continuous Delivery.
+  * Continuous Deployment.
+
+* Tích lũy kinh nghiệm thực tế trong việc sử dụng **GitHub Actions** để tự động hóa các quy trình phát triển phần mềm.
+
+* Tạo và cấu hình thành công các **GitHub Actions Workflows** nhằm tự động hóa các tác vụ trong quá trình phát triển ứng dụng.
+
+* Thực hành triển khai quy trình CI/CD thông qua các công việc:
+
+  * Tự động hóa quá trình Build ứng dụng.
+  * Quản lý và theo dõi quá trình thực thi Workflow.
+  * Cấu hình **GitHub Secrets** để lưu trữ thông tin xác thực một cách an toàn.
+  * Tự động hóa quy trình triển khai ứng dụng.
+
+* Xây dựng thành công Pipeline triển khai tự động từ **GitHub Repository** đến **Amazon EC2**, giúp rút ngắn thời gian triển khai và giảm thiểu thao tác thủ công.
+
+* Giảm đáng kể công sức triển khai thủ công, đồng thời nâng cao tính nhất quán và độ tin cậy của quá trình phát hành phần mềm thông qua tự động hóa.
+
+* Phát triển kỹ năng thực tế về quy trình **DevOps**, tự động hóa phát triển phần mềm và triển khai ứng dụng trên môi trường điện toán đám mây.
+
+* Tích lũy kinh nghiệm tích hợp **GitHub Actions** với hạ tầng AWS nhằm hỗ trợ quy trình phát hành phần mềm liên tục (Continuous Software Delivery).
 
 

@@ -1,29 +1,55 @@
 ---
 title: "Worklog Tuần 10"
 date: 2024-01-01
-weight: 10
+weight: 2
 chapter: false
 pre: " <b> 1.10. </b> "
 ---
-### Mục tiêu tuần 10:
+# Tuần 10
 
-* Thiết lập hạ tầng mạng lõi: VPC, Subnet, NAT Gateway, Security Group.
-* Khởi tạo tầng dữ liệu: **RDS PostgreSQL**, **ElastiCache Redis**.
-* Thiết lập dịch vụ hàng đợi và xác thực: **SQS FIFO**, **Cognito**.
+## Mục tiêu tuần 10
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
-| --- | --- | --- | --- | --- |
-| 2 | - Thiết kế VPC, phân chia Subnet Public/Private trên 2 Availability Zones, NAT Gateways và thiết lập Security Group Chaining | 22/06/2026 | 22/06/2026 | |
-| 3 | - Triển khai **RDS PostgreSQL Multi-AZ** kết hợp **RDS Proxy** và khởi tạo cụm **ElastiCache Redis** | 23/06/2026 | 23/06/2026 | |
-| 4 | - Cấu hình **Amazon Cognito User Pool** để quản lý đăng nhập và xác thực người dùng | 24/06/2026 | 24/06/2026 | |
-| 5 | - Khởi tạo **SQS FIFO Queue** (Booking Queue & Dead Letter Queue - DLQ) để đảm bảo thứ tự mua vé | 25/06/2026 | 25/06/2026 | |
-| 6 | - Kiểm tra khả năng kết nối an toàn từ môi trường test tới Database, Cache và Queue | 26/06/2026 | 26/06/2026 | |
+* Lên kế hoạch và thiết kế kiến trúc cho dự án Workshop trên AWS.
+* Phối hợp với các thành viên trong nhóm để xác định phạm vi dự án, phân công công việc và xây dựng kiến trúc hệ thống.
+* Rà soát và tối ưu kiến trúc giải pháp dựa trên những góp ý từ các mentor AWS.
 
-### Kết quả đạt được tuần 10:
+## Công việc thực hiện trong tuần
 
-Tuần này, dự án triển khai hệ thống bán vé Flash Sale chính thức khởi động (Giai đoạn 1). 
+| Ngày | Công việc                                                                                                                                                                  | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo                      |
+| ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | --------------------------------------- |
+| 65   | - Thảo luận và đề xuất ý tưởng cho Workshop.<br>- Trao đổi về yêu cầu và mục tiêu của dự án.<br>- Lựa chọn các dịch vụ AWS phù hợp để triển khai.                          | 15/06/2026   | 15/06/2026      | https://cloudjourney.awsstudygroup.com/ |
+| 66   | - Lập kế hoạch triển khai dự án.<br>- Xác định các mốc phát triển (Milestones) và sản phẩm bàn giao (Deliverables).<br>- Phân công nhiệm vụ cho các thành viên trong nhóm. | 16/06/2026   | 16/06/2026      | https://cloudjourney.awsstudygroup.com/ |
+| 67   | - Thiết kế kiến trúc giải pháp AWS ban đầu.<br>- Xác định các thành phần của hệ thống và luồng dữ liệu (Data Flow).<br>- Xây dựng sơ đồ kiến trúc (Architecture Diagram).  | 17/06/2026   | 17/06/2026      | https://cloudjourney.awsstudygroup.com/ |
+| 68   | - Trình bày thiết kế kiến trúc để nhận góp ý.<br>- Tiếp nhận phản hồi từ các mentor AWS và các anh chị có kinh nghiệm.<br>- Phân tích các đề xuất cải tiến cho hệ thống.   | 18/06/2026   | 18/06/2026      | https://cloudjourney.awsstudygroup.com/ |
+| 69   | - Hoàn thiện và tối ưu sơ đồ kiến trúc.<br>- Điều chỉnh việc sử dụng các dịch vụ AWS và cấu hình tài nguyên.<br>- Hoàn thành thiết kế kiến trúc cuối cùng cho Workshop.    | 19/06/2026   | 19/06/2026      | https://cloudjourney.awsstudygroup.com/ |
 
-Mình đã hoàn tất việc thiết lập hạ tầng mạng bảo mật với **VPC**, phân chia rạch ròi Public/Private Subnet trên 2 AZs. Ở tầng dữ liệu, thay vì cấu hình thông thường, mình đã triển khai **RDS PostgreSQL Multi-AZ** kết hợp với **RDS Proxy** (giúp quản lý connection pool tốt hơn khi hệ thống chịu tải) và khởi tạo thành công **ElastiCache Redis**.
+## Kết quả đạt được trong tuần 10
 
-Ngoài ra, mình đã setup xong **Cognito User Pool** để chuẩn bị cho luồng đăng nhập và tạo các hàng đợi **SQS FIFO** (gồm Booking Queue và DLQ) để xử lý logic giữ chỗ. Mọi kết nối từ môi trường test nội bộ đến DB và Cache đều đã được xác thực an toàn qua Security Group. Hạ tầng lõi đã sẵn sàng cho tuần deploy ứng dụng tiếp theo!
+* Xác định và lựa chọn thành công chủ đề phù hợp cho Workshop, đáp ứng mục tiêu của dự án và tận dụng hiệu quả các dịch vụ AWS.
+
+* Phối hợp với các thành viên trong nhóm để xây dựng kế hoạch triển khai dự án, bao gồm:
+
+  * Xác định phạm vi dự án.
+  * Thiết lập các mốc phát triển (Milestones).
+  * Phân công nhiệm vụ cho từng thành viên.
+  * Xác định các sản phẩm cần hoàn thành (Deliverables).
+
+* Thiết kế thành công sơ đồ kiến trúc AWS ban đầu, mô tả đầy đủ:
+
+  * Các dịch vụ AWS cốt lõi được sử dụng.
+  * Mối quan hệ giữa các thành phần trong hệ thống.
+  * Luồng dữ liệu (Data Flow).
+  * Cách các tài nguyên AWS tương tác với nhau.
+
+* Tiếp nhận nhiều ý kiến đóng góp từ các mentor AWS và các anh chị có kinh nghiệm về:
+
+  * Lựa chọn dịch vụ AWS phù hợp.
+  * Các nguyên tắc thiết kế kiến trúc theo AWS Best Practices.
+  * Khả năng mở rộng (Scalability).
+  * Tăng cường bảo mật (Security).
+
+* Hoàn thiện và tối ưu kiến trúc hệ thống dựa trên các góp ý, giúp giải pháp trở nên hợp lý, hiệu quả và dễ mở rộng hơn.
+
+* Nâng cao hiểu biết về các nguyên tắc thiết kế giải pháp trên nền tảng điện toán đám mây cũng như AWS Well-Architected Best Practices.
+
+* Hoàn thành sơ đồ kiến trúc cuối cùng, làm nền tảng cho quá trình triển khai Workshop và phát triển hệ thống trong các tuần tiếp theo.

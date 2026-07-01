@@ -1,30 +1,54 @@
 ---
 title: "Week 5 Worklog"
 date: 2024-01-01
-weight: 5
+weight: 1
 chapter: false
 pre: " <b> 1.5. </b> "
 ---
+
+
 ### Week 5 Objectives:
 
-* Analyze AWS official architecture guides for high-load systems.
-* Attend **AWS Event** (05/23) and analyze topics on High Availability and Microservices.
-* Study **Event-Driven Architecture** and **Serverless** concepts.
+* Understand AWS networking fundamentals and Amazon VPC.
+* Learn how to design and configure network infrastructure in AWS.
+* Practice creating VPCs, subnets, route tables, and security configurations.
 
 ### Tasks to be carried out this week:
-| Day | Task | Start Date | Completion Date | Reference Material |
-| --- | --- | --- | --- | --- |
-| 2 | - Review AWS official web hosting architecture guides <br> - Explore High Availability architecture models on AWS | 05/18/2026 | 05/18/2026 | |
-| 3 | - Learn the differences between Monolithic and Microservices architectures | 05/19/2026 | 05/19/2026 | |
-| 4 | - Practice configuring Application Load Balancer (ALB) and Auto Scaling Group on AWS Console | 05/20/2026 | 05/20/2026 | |
-| 5 | - Basic research on Event-Driven Architecture | 05/21/2026 | 05/21/2026 | |
-| 6 | - Draft initial architecture diagrams for the ticket booking system to visualize service connections | 05/22/2026 | 05/22/2026 | |
-| 7 | - Attend **AWS Event** (05/23), analyze topics: <br> - Building **High Availability** systems on AWS <br> - Decoupling applications with **Microservices** <br> - Cost optimization with **Auto Scaling** <br> - **Amazon CloudFront** content distribution architecture <br> - Enterprise-grade **Event-Driven Architecture** | 05/23/2026 | 05/23/2026 | |
+| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
+| 30   | - Learn AWS Networking fundamentals <br>- Introduction to Amazon VPC <br>- Understand CIDR and IP Addressing                                                                                                   | 05/11/2026 | 05/11/2026      |
+| 31   | - Learn about VPC components:   <br>&emsp;+ Subnets   <br>&emsp;+ Route Tables   <br>&emsp;+ Internet Gateway   <br>&emsp;+ NAT Gateway                                              | 05/12/2026 | 05/12/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 32   | - Practice:   <br>&emsp;+ Create a custom VPC   <br>&emsp;+ Create Public and Private Subnets   <br>&emsp;+ Configure Route Tables | 05/13/2026 | 05/13/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 33   | - Learn about Security Groups and Network ACLs <br>- Understand inbound and outbound rules <br>- Compare Security Groups vs NACLs                            | 05/14/2026 | 05/14/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 34   | - **Practice**:   <br>&emsp;+ Launch EC2 inside custom VPC   <br>&emsp;+ Configure Security Groups   <br>&emsp;+ Test network connectivity between resources                                                                                     | 05/15/2026 | 05/15/2026      | <https://cloudjourney.awsstudygroup.com/> |
+
 
 ### Week 5 Achievements:
 
-This week I primarily focused on **analyzing AWS official architecture guides** to grasp the standards for high-load systems, preparing a solid foundation for the upcoming large-scale project.
+* Developed a strong understanding of AWS networking concepts and Amazon VPC architecture.
 
-The biggest highlight was **attending the AWS Event on 05/23** — directly analyzing technical topics that are extremely useful for real-world projects: building **High Availability** systems, application decoupling with **Microservices**, cost optimization with **Auto Scaling**, **Amazon CloudFront** content distribution, and especially enterprise-grade **Event-Driven Architecture**.
+* Learned the key networking components in AWS, including:
 
-CloudFront and Event-Driven Architecture were the two most practical topics, helping me shape the mindset of designing decoupled systems rather than bundling everything into a single server.
+  * Virtual Private Cloud (VPC)
+  * Public Subnet
+  * Private Subnet
+  * Route Table
+  * Internet Gateway
+  * NAT Gateway
+  * Security Groups
+  * Network ACLs
+
+* Successfully created and configured a custom VPC environment.
+
+* Practiced designing network architecture by:
+
+  * Creating Public and Private Subnets
+  * Configuring Route Tables
+  * Connecting resources to the Internet through Internet Gateway
+  * Managing network traffic using Security Groups and NACLs
+
+* Gained experience deploying EC2 instances inside a custom VPC and validating connectivity between AWS resources.
+
+* Understood the differences between Security Groups and Network ACLs and how they contribute to securing cloud infrastructure.
+
+* Developed practical skills in designing secure and scalable network environments for AWS-based applications.

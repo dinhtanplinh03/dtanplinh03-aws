@@ -1,29 +1,56 @@
 ---
 title: "Week 3 Worklog"
 date: 2024-01-01
-weight: 3
+weight: 1
 chapter: false
 pre: " <b> 1.3. </b> "
 ---
+
+
 ### Week 3 Objectives:
 
-* Learn **Module 6** (Storage) and **Module 7** (Databases) on Skill Builder.
-* Try creating an **S3 bucket** on the Console to match the theory.
+* Understand Amazon S3 and AWS storage services.
+* Learn how to create, manage, and secure S3 buckets.
+* Practice storing, retrieving, and hosting content using Amazon S3.
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Complete **Module 6 – Storage** (AWS Cloud Practitioner Essentials) on AWS Skill Builder <br> - Introduction to Module 6: introduction to storage <br> - **Block storage:** Instance Store and Amazon EBS; EBS data lifecycle <br> - **Object storage:** Amazon S3; S3 storage classes and S3 lifecycle; S3 demo <br> - **File storage:** Amazon EFS; Amazon FSx <br> - **Additional storage solutions:** AWS Storage Gateway; AWS Elastic Disaster Recovery <br> - Cloud in Real Life: comparing storage services | 05/04/2026 | 05/04/2026      | <https://skillbuilder.aws/>               |
-| 3   | - Complete **Module 7 – Databases** on AWS Skill Builder <br> - Introduction to Module 7: introduction to databases <br> - **AWS database services:** relational databases; NoSQL; database demo; in-memory caching; additional database services | 05/05/2026 | 05/05/2026      | <https://skillbuilder.aws/>               |
-| 4   | **Basic Practice (Module 6):** on Console, create an **S3 bucket**, upload a test file, review the object in the bucket.                                                                                  | 05/06/2026 | 05/06/2026      |                                           |
-| 5   | - Review **Modules 6–7**, note commonly confused areas (block/object/file, relational vs NoSQL)                                                                                                           | 05/07/2026 | 05/07/2026      |                                           |
-| 6   |                                                                                                                                                                                                          | 05/08/2026 | 05/08/2026      |                                           |
+| 16   | - Learn about AWS Storage Services <br>- Introduction to Amazon S3 <br>- Understand Objects, Buckets, and Storage Classes                                                                                                   | 04/27/2026 | 04/27/2026      |
+| 17   | - Learn about S3 Bucket structure <br>- Understand Bucket naming rules <br>- Learn S3 security concepts                                              | 04/28/2026 | 04/28/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 18   | - **Practice**:   <br>&emsp;+ Create S3 Bucket   <br>&emsp;+ Upload files and folders   <br>&emsp;+ Download and manage objects | 04/29/2026 | 04/29/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 19   | - Learn about Bucket Policies and Access Control <br>- Understand Public and Private access settings <br>- Configure Bucket permissions                            | 04/30/2026 | 04/30/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 20   | - Practice:   <br>&emsp;+ Host a Static Website using Amazon S3   <br>&emsp;+ Configure website endpoint   <br>&emsp;+ Test website accessibility                                                                                     | 05/01/2026 | 05/01/2026      | <https://cloudjourney.awsstudygroup.com/> |
 
 
 ### Week 3 Achievements:
 
-This week I completed **Module 6** and **Module 7**. Before, I mostly heard about EC2, VPC…; now with **storage** (EBS, S3, EFS…) and **databases** (RDS, NoSQL…) added, I know where data typically resides on AWS. The areas I often confused were **block / object / file** and **relational vs NoSQL** — reviewing helped reduce the confusion.
+* Developed a comprehensive understanding of Amazon S3 and cloud storage concepts.
 
-Light practice: created an **S3 bucket**, uploaded a test file, opened it again — nothing deep, just to remember the basic operations.
+* Learned the key components of Amazon S3:
 
+  * Buckets
+  * Objects
+  * Storage Classes
+  * Bucket Policies
+  * Access Control
 
+* Successfully created and managed S3 buckets for storing cloud resources.
+
+* Practiced common S3 operations, including:
+
+  * Creating buckets
+  * Uploading files and folders
+  * Downloading objects
+  * Managing bucket permissions
+  * Configuring public and private access
+
+* Learned how to secure S3 resources using:
+
+  * Bucket Policies
+  * Access Control settings
+  * Public Access Block
+
+* Successfully deployed a static website using Amazon S3 and verified public accessibility through the website endpoint.
+
+* Gained practical experience using Amazon S3 as a scalable and highly available cloud storage solution.

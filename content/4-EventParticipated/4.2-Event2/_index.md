@@ -1,108 +1,105 @@
 ---
 title: "Event 2"
 date: 2024-01-01
-weight: 2
+weight: 1
 chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-# Takeaway from “AWS Community Day (05/23/2026)”
+# Report on “FCAJ COMMUNITY DAY”
 
-### Purpose of the Event
+## Purpose of the Event
 
-- Update on the latest technology trends on AWS, especially deep dives into AI/ML, Multi-Agent architecture, and infrastructure optimization.
-- Create a networking space to learn from experts from various enterprises.
-- Discuss practical case studies (e.g., startup credit risk assessment, building a Second Brain, CloudFront architecture).
+* To create opportunities for networking, learning, and connecting with the cloud computing community.
+* To share practical knowledge about AWS Cloud, Artificial Intelligence (AI), and modern technologies.
+* To provide career guidance for students and beginners interested in Cloud Computing.
+* To introduce AWS community programs and opportunities for skill development.
 
-### List of Speakers
+## Speakers
 
-- **Anh Tinh**: Build second brain
-- **Hai Anh**: Friendly AI Assistant with Amazon Q
-- **Thinh**: From Edge To Origin: CloudFront as Your Foundation
-- **Team VIB**: 36 hrs with LotusHacks – Building UTMorpho from Idea to Reality
-- **Dao Duc**: Deep dive talk: How LLM actually works
-- **Cat Vy**: Enterprise-Grade Multi-Agent System: The Case of Startup Credit Scoring
+* Tịnh Trường – Platform Engineer, GoTymeX
+* Phạm Nguyễn Hải Anh – G-AsiaPacific Vietnam
+* Nguyễn Tuấn Thịnh – DevOps Engineer
+* VIB Team
+* Đào Đức – Solution Architect, Cloud Kinetics
+* Vy Lam – Senior Business Systems Analyst, VPBank
 
-### Key Highlights
+## Key Topics
 
-The event featured 6 profound technical sessions:
+### Context Is Everything – Making AI Actually Work for You
 
-#### 1) Context Engineering & Building a Second Brain (Anh Tinh)
+* This session emphasized the importance of context when working with Artificial Intelligence (AI) and Large Language Models (LLMs).
+* AI models can only generate high-quality results when they are provided with sufficient context and relevant information.
+* The speaker also shared effective prompt engineering techniques, context management strategies, and best practices for applying AI in business environments.
 
-- **Why AI performs poorly**: Inaccurate or generic answers are rarely due to poor AI models, but rather input data lacking context.
-- **The "Internet Puller" Mistake**: Users tend to stuff entire documents into chat. Garbage input not only reduces accuracy but also wastes token costs.
-- **Context Standardization Framework**: For AI to act as a "Second Brain", input must be designed like delegating to a human, including 4 elements: Goal, Relevant info, Constraints, and Success criteria.
-- **Memory System Architecture**: A complete AI system flows as: Store → Retrieve → Generate → Learn.
+### Friendly AI Assistant with Amazon Wick
 
-#### 2) Enterprise Virtual Assistant & Agentic AI (Hai Anh)
+* This session introduced how to build an AI-powered assistant using AWS services.
+* The presentation demonstrated how AI can help users search documents, answer questions, generate source code, automate workflows, and improve developer productivity.
 
-- **Enterprise Data Challenges**: Staff repeatedly perform time-consuming manual tasks and search for scattered information.
-- **The Power of Amazon Quick Suite**: Agentic AI unifies the user experience, accelerating the process from Insight to Action.
-- **Integration Capabilities**: Directly connects to 40+ Data connectors, internal databases, web search, and thousands of 3rd-party actions.
-- **Responsible AI Controls**: Ensures data safety via Governance, Access controls, and Guardrails to comply with legal regulations.
+### From Edge to Origin – CloudFront as Your Foundation
 
-#### 3) Edge Infrastructure Optimization with Amazon CloudFront (Thinh)
+* The speaker explained how Amazon CloudFront can optimize content delivery and improve application performance worldwide.
+* The session covered caching mechanisms, security features, latency reduction, and cost optimization when deploying web applications on AWS.
 
-- **The "Bill Shock" Problem**: With Pay-as-you-go pricing, startups face financial risks during viral traffic spikes or cyber attacks, causing bills to shoot up to $100,000.
-- **Fixed-Price Solution**: AWS offers fixed-price packages including CDN, WAF, Anti-DDoS, Route 53, and S3, helping businesses easily control finances.
-- **Data Compression at the Edge**: CloudFront automatically compresses HTTP content, reducing download size by 82% and latency by 81%. Integrating HTTP/3 (QUIC/UDP) enables parallel multiplexing of static files.
-- **Origin Cloaking**: Uses Origin Access Control (OAC) or Custom Headers to completely hide the origin server from the public internet.
+### 36 Hours with LotusHacks
 
-#### 4) 36 Hours at LotusHacks (Team VIB)
+* This presentation shared the team's experience participating in the LotusHacks hackathon within a 36-hour timeframe.
+* The speakers discussed product development under time pressure, task allocation, teamwork, and valuable lessons learned from building a real-world project.
 
-- **Building UTMorpho**: An application rapidly designed and deployed in 36 hours, powered by Claude Sonnet 4 on the US-East-1 region.
-- **Biggest Technical Barrier**: The team faced "AI Overgeneration" and constantly hit Token Limits as deadlines approached.
-- **Lessons Learned**: "Real Frustration Creates Real Ideas". In a Hackathon, Team Sync and endurance matter more than the quantity of ideas.
+### Non-Determinism of "Deterministic" LLM Settings
 
-#### 5) The Nature of LLM Nondeterminism (Dao Duc)
+* This session explained why Large Language Models may still produce different outputs even when using the same prompt and identical parameters.
+* The speaker introduced concepts such as temperature, seed values, sampling strategies, and other factors that affect AI consistency in production environments.
 
-- **The Temperature = 0 Myth**: Theoretically, T=0 makes the LLM pick the highest probability token for 100% identical output. Reality shows accuracy fluctuates by 15%, and the gap between best/worst runs can reach 70% for the same prompt.
-- **Root Cause**: Floating-point math processed in parallel on GPUs is not associative: (a+b)+c != a+(b+c). Furthermore, Inference batching changes calculations for specific requests.
-- **Mitigation Strategy**: Engineers must design systems tolerant of errors, use Majority voting, and optionally set Temperature to 0.1 to avoid infinite vocabulary loops.
+### Enterprise-Grade Multi-Agent System
 
-#### 6) Enterprise-Grade Multi-Agent Architecture (Cat Vy)
+* The presentation introduced an enterprise-level Multi-Agent AI architecture where multiple AI agents collaborate to complete complex tasks.
+* It also covered task distribution, communication between agents, monitoring, and security considerations for enterprise deployment.
 
-- **Limitations of Traditional Banking & Single Agents**: Startups are rejected due to lacking financial reports/collateral. Using a single AI Agent causes Context limits, expertise dilution, lacks Checks & Balances, and creates a Single Point of Failure.
-- **Multi-Agent Solution (Virtual Credit Committee)**: Building a virtual committee with specialized agents: Manager, Financial Analyst, Market Analyst, Team Evaluator, Risk Assessor, and Compliance.
-- **Operational ROI**: Reduced approval time from 2-3 weeks to 2-4 hours. Decision costs dropped from ~100M VND to under 5M VND, doubling the approval rate to 35-45%.
-- **Deployment Infrastructure**: Dockerized, pushed to Amazon ECR, integrated into Bedrock AgentCore Runtime, connected via AWS Lambda, and exposed via API Gateway.
+## What I Learned
 
-### What I Learned
+### AI Knowledge
 
-- Understood the shift from using a single AI model to a Multi-Agent Paradigm for solving complex, highly branched enterprise problems.
-- Gained a clearer perspective on the importance of Security & Compliance (Guardrails) when deploying AI to a Production environment.
-- Grasped how to optimize data flow latency via CloudFront and integrate Amazon Q into daily workflows.
-- Understood the nondeterministic nature of LLMs and how to design fault-tolerant systems when working with AI.
+* I gained a better understanding of the importance of context when working with AI models.
+* I learned how effective prompt engineering can significantly improve AI-generated results.
+* I understood why AI systems may produce different responses under the same conditions.
+* I obtained an overview of Multi-Agent AI systems and their business applications.
 
-### Application to Work
+### AWS Cloud Knowledge
 
-- Explore integrating **Amazon Q** into debugging and reading AWS documentation to save time.
-- Network Design: Prioritize deploying **CloudFront** at the edge combined with WAF and OAC to increase page load speed, hide origin servers, and ensure security.
-- When designing future AI features, aim to split the logic for specialized "Agents" to process, rather than cramming everything into a single prompt.
-- Build a prompt writing framework applying the 4 elements: Goal, Relevant Info, Constraints, and Success Criteria.
+* I learned how Amazon CloudFront improves application performance and reduces server workload.
+* I became familiar with several AWS AI services that support developers and businesses.
+* I gained insights into best practices for deploying applications on AWS.
 
-### Event Experience
+### Product Development Skills
 
-The event delivered extremely high technical value. While Event 1 leaned towards career orientation and basic prompt optimization, Event 2 dove straight into system architecture and how large enterprises deploy AI securely and cost-effectively. I was particularly impressed by Cat Vy's Multi-Agent case study, which painted a clear picture of Enterprise-grade AI with convincing ROI figures. Additionally, the "Bill Shock" problem and CloudFront solution provided a highly practical lesson for upcoming projects.
+* I learned about the software development process in hackathons.
+* I improved my understanding of teamwork, task management, and time management.
+* I recognized the importance of building a Minimum Viable Product (MVP) to validate ideas quickly.
 
-#### Event Photos
-<div style="display:flex;flex-wrap:wrap;gap:10px;align-items:flex-start">
-  <img src="/images/4-EventParticipated/4.2-Event2/0af18e585985d8db819420.jpg" style="width:220px;height:auto" />
-  <img src="/images/4-EventParticipated/4.2-Event2/1c14f9bc2e61af3ff67019.jpg" style="width:220px;height:auto" />
-  <img src="/images/4-EventParticipated/4.2-Event2/1f91f03f27e2a6bcfff326.jpg" style="width:220px;height:auto" />
-  <img src="/images/4-EventParticipated/4.2-Event2/235701fad62757790e3627.jpg" style="width:220px;height:auto" />
-  <img src="/images/4-EventParticipated/4.2-Event2/3dfd2c55fb887ad6239912.jpg" style="width:220px;height:auto" />
-  <img src="/images/4-EventParticipated/4.2-Event2/53ed98464f9bcec5978a14.jpg" style="width:220px;height:auto" />
-  <img src="/images/4-EventParticipated/4.2-Event2/5b603dceea136b4d320223.jpg" style="width:220px;height:auto" />
-  <img src="/images/4-EventParticipated/4.2-Event2/64fbaf53788ef9d0a09f21.jpg" style="width:220px;height:auto" />
-  <img src="/images/4-EventParticipated/4.2-Event2/6c14edba3a67bb39e27616.jpg" style="width:220px;height:auto" />
-  <img src="/images/4-EventParticipated/4.2-Event2/a39a3d34eae96bb732f824.jpg" style="width:220px;height:auto" />
-  <img src="/images/4-EventParticipated/4.2-Event2/d3aafc022bdfaa81f3ce15.jpg" style="width:220px;height:auto" />
-  <img src="/images/4-EventParticipated/4.2-Event2/d4174ebf9962183c417311.jpg" style="width:220px;height:auto" />
-  <img src="/images/4-EventParticipated/4.2-Event2/dc4096ed4130c06e992128.jpg" style="width:220px;height:auto" />
-  <img src="/images/4-EventParticipated/4.2-Event2/e4abac027bdffa81a3ce22.jpg" style="width:220px;height:auto" />
-  <img src="/images/4-EventParticipated/4.2-Event2/ecc87061a7bc26e27fad17.jpg" style="width:220px;height:auto" />
-  <img src="/images/4-EventParticipated/4.2-Event2/f1c5b56c62b1e3efbaa018.jpg" style="width:220px;height:auto" />
-  <img src="/images/4-EventParticipated/4.2-Event2/fe4d0ce7db3a5a64032b13.jpg" style="width:220px;height:auto" />
-  <img src="/images/4-EventParticipated/4.2-Event2/ff0763a9b474352a6c6525.jpg" style="width:220px;height:auto" />
-</div>
+## Applying the Knowledge
+
+* Apply prompt engineering techniques to improve AI usage in both study and work.
+* Use Amazon CloudFront to optimize the performance of websites and applications hosted on AWS.
+* Explore Amazon Q to support software development and automate repetitive tasks.
+* Study Multi-Agent AI architectures for building intelligent systems capable of handling complex workflows.
+* Apply lessons learned from hackathons to improve teamwork, collaboration, and rapid product development.
+
+## Experience During the Event
+
+Participating in FCAJ Community Day provided me with valuable knowledge about AI and AWS Cloud through a series of practical and inspiring presentations. The speakers were experienced engineers and technology professionals who shared real-world projects and industry best practices.
+
+I was particularly impressed by the session **"Context Is Everything – Making AI Actually Work for You"**, which helped me understand that the effectiveness of AI heavily depends on providing the right context and high-quality input data. In addition, the **"From Edge to Origin"** session gave me a better understanding of how Amazon CloudFront improves application performance and enhances user experience.
+
+The **"36 Hours with LotusHacks"** presentation was also very inspiring. The speakers shared how they successfully built a complete product within only 36 hours, demonstrating effective teamwork, decision-making under pressure, and efficient time management.
+
+Besides learning technical knowledge, the event also gave me the opportunity to connect with students and professionals working in Cloud Computing and Artificial Intelligence, helping me expand my professional network and gain a clearer career direction.
+
+## Lessons Learned
+
+* AI can only achieve its full potential when it is provided with appropriate context and high-quality data.
+* Amazon CloudFront plays a critical role in improving application performance and scalability.
+* Multi-Agent AI systems are becoming an important trend for building enterprise AI applications.
+* Hackathons are excellent opportunities to improve problem-solving, teamwork, and rapid product development skills.
+* Continuously learning new technologies in AI and Cloud Computing is essential for improving professional skills and creating future career opportunities.

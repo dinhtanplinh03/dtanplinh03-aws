@@ -1,84 +1,96 @@
 ---
 title: "Event 3"
 date: 2024-01-01
-weight: 3
+weight: 1
 chapter: false
 pre: " <b> 4.3. </b> "
 ---
 
-# Takeaway from “FCAJ Meetup (06/13/2026)”
+# Event Report – “FCAJ COMMUNITY DAY”
 
-### Purpose of the Event
+## Purpose of the Event
 
-- Provide a realistic, unfiltered picture of what Engineers (DevOps, Data Analytics) actually do at multinational corporations (MNCs), dispelling common student myths.
-- Delve into corporate culture, global working standards, and roadmap for sustainable career development, from entry-level to expert.
-- Inspire and guide on how to leverage technology communities (AWS) as a launchpad to advance and spread value.
+* To provide opportunities for networking, learning, and connecting with the cloud computing community.
+* To share practical knowledge about AWS Cloud, Artificial Intelligence (AI), and modern technologies.
+* To provide career guidance for students and beginners who are interested in Cloud Computing.
+* To introduce AWS community programs and opportunities for skill development.
 
-### List of Speakers
+## Speakers
 
-- **Mr. Trong H. Truong** (DevOps Engineer @ Endava Vietnam): “What does a DevOps Engineer really do?”
-- **Mr. Dat Pham** (Data Analytics Engineer) & **Mr. Cuong Nguyen** (Process Engineer): “Real stories and culture at multinational corporations”
-- **Mr. Danh Hoang Hieu Nghi** (AI Engineer): “From First Cloud AI Journey to AWS Partner”
-- **Dinh Trung Kien & Nguyen Minh Tho**: “A scalable URL shortening service on AWS”
+* Danh Hoàng Hiếu Nghị – AI Engineer, AWS Community Builder, AWS Student Builder Group Leader
+* Trọng H. Trương – DevOps Engineer, Endava Vietnam
+* Mr. Đạt Phạm – Data Analytics Engineer
+* Mr. Cường Nguyễn – Process Engineer
+* Đinh Trung Kiên
+* Nguyễn Minh Thọ
 
-### Key Highlights
+## Key Topics
 
-The event featured 4 highly practical sessions:
+### From First Cloud AI Journey to AWS Partner
 
-#### 1) Dinh Trung Kien & Nguyen Minh Tho — A scalable URL shortening service on AWS
+* The speaker shared his journey from learning AWS and AI as a beginner to becoming an AWS Community Builder and collaborating within the AWS ecosystem.
+* The session emphasized the importance of building a strong technical foundation, actively participating in the community, and continuously learning to advance one's career.
+* It also introduced AWS learning paths, certification opportunities, and career prospects in Cloud Computing and Artificial Intelligence.
 
-- **Purpose**: Solving a classic System Design problem: Building a URL shortening service that is highly scalable, secure, and latency-optimized, rather than a simple, fragile MVP.
-- **Risks of a "Simple Flow"**: The basic Frontend → Backend → Database architecture faces numerous issues: Single Point of Failure (SPOF), hard to scale, high read latency, and vulnerability due to lack of edge protection.
-- **Real-world AWS Architecture**:
-  - **Edge Layer**: Uses Amazon CloudFront combined with AWS WAF to block malicious traffic and distribute static content from Amazon Amplify.
-  - **App Layer**: Containerized backend running on Amazon ECS (Fargate), using an Application Load Balancer to route traffic to Private Subnets.
-- **Key Generation Service (KGS)**: An excellent move to optimize performance. Instead of generating random keys on-demand, a background service pre-generates short codes and pushes them into a Redis queue (`LPUSH`).
-- **Create Flow**: The backend simply pops a pre-generated code from Redis (`RPOP`), associates it with the original URL, and saves it to DynamoDB, eliminating generation latency.
-- **Forward Flow / Cache-aside**: The system searches ElastiCache for Redis first. It only queries DynamoDB on a Cache miss, significantly reducing the load on the primary database.
+### What Does a DevOps Engineer Really Do?
 
-#### 2) Trong H. Truong — What does a DevOps Engineer really do?
+* This session explained the roles and responsibilities of a DevOps Engineer in modern organizations.
+* The speaker introduced CI/CD pipelines, Infrastructure as Code (IaC), system monitoring, deployment automation, and cloud infrastructure management.
+* Besides technical knowledge, the presentation also highlighted the mindset and soft skills required to work effectively in a DevOps environment.
 
-- **Myth vs. Reality**: People often think DevOps is just writing CI/CD pipelines, typing Docker/K8s commands, or being the "hero" who fixes servers at midnight. In reality, the scope is much broader: on-call duties, incident handling, access management, cost investigation, and especially Ownership clarification.
-- **What to learn first**: Don't chase tools because tools always change. Master the Fundamentals: Linux, Networking, Git, Containers, and a programming language (Python/Golang).
-- **Hard-learned lessons**: Copying commands online doesn't mean you understand them. Always ask "Why" before "How". Communication is a core DevOps skill. Use AI to enhance your skills, not to turn off your brain.
+### Real-Life Stories and Corporate Culture in Multinational Companies
 
-#### 3) Dat Pham & Cuong Nguyen — Real stories & MNC Culture
+* The speakers shared their real-world experiences working in multinational companies, including workflows and corporate culture.
+* The session emphasized the importance of communication, teamwork, problem-solving skills, and adaptability in an international working environment.
+* Participants also learned valuable lessons about career development and long-term professional growth.
 
-- **Survival Skills**: To work at an MNC, besides hard skills, you must have Critical Thinking, Communication, Problem Solving, and especially "Data Storytelling".
-- **5-Level Career Model**: Follower (Executes instructions) → Learner (Proactive learner) → Problem Solver (Resolves issues completely) → System Thinker (Sees the big picture, long-term optimization) → Super Star (Strategic driver and leader).
-- **Decoding Corporate Culture**: In tech MNCs, the "No-Blame Post-Mortem" culture is prominent: when a severe error occurs, the team focuses on finding the root cause to fix the system, not blaming individuals.
-- **"Đúng Việc" (Right Work) Philosophy**: 3 pillars: Being Human (inner management), Being Professional (serving via expertise), and Being a Citizen (national responsibility, tech legacy).
+### A Scalable URL Shortening Service on AWS
 
-#### 4) Danh Hoang Hieu Nghi — From First Cloud AI Journey to AWS Partner
+* This presentation demonstrated how to build a scalable URL shortening service using AWS.
+* The speaker introduced the overall system architecture, including Amazon API Gateway, AWS Lambda, Amazon DynamoDB, and Amazon CloudFront.
+* The session also discussed scalability, cost optimization, security, and performance considerations for systems serving a large number of users.
 
-- **8-Step Roadmap**: Starting from Student Curiosity → Finding the right environment (First Cloud Journey) → Hands-on Labs → Demonstrating capability (Portfolio) → Becoming an AWS Partner → Share Back to the community.
-- **Community Power**: Getting a job is just the beginning. Engaging in communities (AWS Student Builder Group, AWS Community Builder) provides an excellent network and practical support: certification vouchers, AWS Credits, and exclusive swags.
+## What I Learned
 
-### What I Learned
+### AWS and AI Knowledge
 
-- **Clear awareness**: Tools change constantly; only solid Fundamentals and System Thinking can help engineers go the distance.
-- **Stepping stone to MNCs**: Shift mindset from "getting it done" to "getting it done right (to standard)", combined with a "No-Blame" spirit to continuously improve oneself and the system.
-- **The importance of giving back**: Technical expertise combined with tech community support creates a powerful launchpad for a career roadmap.
-- **System Design Optimization**: Learned Separation of Concerns (separating Read/Write flows), Defense at the Edge (protecting with WAF/CloudFront), and Pre-computation over On-demand (calculating ahead of time rather than in real-time).
+* I gained a better understanding of AWS learning paths and opportunities within the AWS community.
+* I learned how AI can be integrated with cloud services to build intelligent applications.
+* I understood the important role of AWS in supporting the development of modern cloud-based systems.
 
-### Application to Work
+### DevOps Knowledge
 
-- **Self-study & Practice**: Break the habit of mindlessly copy-pasting code. When using AI to help write scripts or configure infrastructure, force yourself to analyze and fully understand what each line does.
-- **Upgrade project mindset**: Apply a System Thinker mindset to internship projects instead of just being a Follower. Don't just make the code run; optimize performance, anticipate risks, and practice clear progress reporting.
-- **Personal Branding**: Plan to actively participate in the AWS Student Builder Group to build a high-quality Portfolio and aim towards community building in the future.
-- **Apply Cache-aside Pattern**: Use Redis in personal/academic projects to optimize response times for read-heavy APIs.
-- **Decouple heavy tasks**: Learn to decouple heavy tasks from the main execution flow using background workers, pre-computing data for smoother processing.
+* I learned about the roles and responsibilities of a DevOps Engineer.
+* I gained knowledge of CI/CD pipelines, deployment automation, and infrastructure management using Infrastructure as Code.
+* I understood the importance of system monitoring, logging, and performance optimization.
 
-#### Event Photos
-<div style="display:flex;flex-wrap:wrap;gap:10px;align-items:flex-start">
-  <img src="/images/4-EventParticipated/4.3-Event3/02fd3145e69867c63e892.jpg" style="width:220px;height:auto" />
-  <img src="/images/4-EventParticipated/4.3-Event3/2430b5896254e30aba453.jpg" style="width:220px;height:auto" />
-  <img src="/images/4-EventParticipated/4.3-Event3/50400dfdda205b7e02317.jpg" style="width:220px;height:auto" />
-  <img src="/images/4-EventParticipated/4.3-Event3/7223549d8340021e5b5110.jpg" style="width:220px;height:auto" />
-  <img src="/images/4-EventParticipated/4.3-Event3/8319bea7697ae824b16b8.jpg" style="width:220px;height:auto" />
-  <img src="/images/4-EventParticipated/4.3-Event3/92acc71710ca9194c8db1.jpg" style="width:220px;height:auto" />
-  <img src="/images/4-EventParticipated/4.3-Event3/af6eaed3790ef850a11f5.jpg" style="width:220px;height:auto" />
-  <img src="/images/4-EventParticipated/4.3-Event3/dba02f1ef8c3799d20d26.jpg" style="width:220px;height:auto" />
-  <img src="/images/4-EventParticipated/4.3-Event3/ed911328c4f545ab1ce49.jpg" style="width:220px;height:auto" />
-  <img src="/images/4-EventParticipated/4.3-Event3/f09d922345fec4a09def4.jpg" style="width:220px;height:auto" />
-</div>
+### System Design
+
+* I learned how to design scalable systems on AWS.
+* I gained a better understanding of selecting appropriate AWS services for real-world applications.
+* I understood key factors such as performance, scalability, availability, and cost optimization.
+
+### Professional Skills
+
+* I improved my understanding of teamwork and communication in a professional working environment.
+* I learned valuable insights into workplace culture and career development in multinational companies.
+
+## Experience During the Event
+
+Participating in **FCAJ Community Day** gave me the opportunity to learn practical knowledge about AI, AWS Cloud, DevOps, and career development through a series of engaging presentations. The speakers were experienced engineers and technology professionals who shared valuable insights from real-world projects and their professional experience.
+
+I was particularly impressed by the session **"From First Cloud AI Journey to AWS Partner"**, which inspired me by showing how continuous learning, active community involvement, and persistence can lead to significant career growth in the AWS ecosystem.
+
+The **"What Does a DevOps Engineer Really Do?"** session helped me better understand the responsibilities of a DevOps Engineer, as well as modern software development practices such as CI/CD, automation, and cloud infrastructure management.
+
+Another memorable session was **"A Scalable URL Shortening Service on AWS"**, which demonstrated how to design a scalable cloud application using AWS services. It provided practical insights into system architecture, service selection, scalability, and cost optimization.
+
+In addition to learning technical knowledge, I also had the opportunity to interact with AWS community members, industry professionals, and fellow students, allowing me to expand my professional network and gain a clearer direction for my future career.
+
+## Lessons Learned
+
+* Participating in technology communities creates valuable learning and career development opportunities.
+* DevOps is not only about tools but also about a mindset of automation and continuous improvement.
+* When designing cloud systems on AWS, scalability, performance, availability, security, and cost optimization should always be considered.
+* Communication, teamwork, and adaptability are just as important as technical skills in today's workplace.
+* Continuous learning and hands-on practice through real-world projects are essential for developing professional skills and creating more career opportunities in Cloud Computing.

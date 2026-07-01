@@ -1,28 +1,53 @@
 ---
 title: "Week 8 Worklog"
 date: 2024-01-01
-weight: 8
+weight: 1
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
+
+
 ### Week 8 Objectives:
 
-* Research **event-driven architecture** and design asynchronous processing flow using **Amazon SQS**, **SNS**.
-* Practice configuring SNS Topic and SQS Queue directly on AWS Console.
+* Understand containerization concepts and Docker fundamentals.
+* Learn how to containerize applications and deploy containers on AWS infrastructure.
+* Practice building, running, and managing Docker containers.
 
 ### Tasks to be carried out this week:
 | Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Research **Event-Driven Architecture** on AWS <br> - Understand why asynchronous processing is needed, common patterns                                                                                 | 06/08/2026 | 06/08/2026      |                                           |
-| 3   | - Design asynchronous processing flow using **Amazon SQS** and **SNS** for the ticket booking project <br> - Study SQS (Standard vs FIFO) and SNS (topics, subscriptions)                               | 06/09/2026 | 06/09/2026      |                                           |
-| 4   | - Integrate **SQS** as payment request processing queue <br> - Configure **SNS** to send confirmation emails/messages and e-tickets to customers                                                         | 06/10/2026 | 06/10/2026      |                                           |
-| 5   | - Write test scripts for asynchronous processing flow <br> - Handle errors encountered during message transmission via SQS/SNS                                                                          | 06/11/2026 | 06/11/2026      |                                           |
-| 6   | - Review integrated SQS + SNS architecture <br> - Write test scripts to verify asynchronous processing flows                                                                                                                       | 06/12/2026 | 06/12/2026      |                                           |
-| 7   | - Practice configuring **SNS Topic** and **SQS Queue** directly on AWS Console <br> - Run tests for sending messages and receiving notifications | 06/13/2026 | 06/13/2026      |                                           |
+| 51   | - Learn about Containerization concepts <br>- Introduction to Docker <br>- Understand Containers vs Virtual Machines                                                                                                   | 06/01/2026 | 06/01/2026      |
+| 52   | - Learn Docker architecture <br>- Understand Docker Images, Containers, and Docker Hub <br>- Install Docker on local machine and EC2                                              | 06/02/2026 | 06/02/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 53   | - **Practice**:   <br>&emsp;+ Pull Docker Images from Docker Hub   <br>&emsp;+ Run and manage Containers   <br>&emsp;+ Explore Docker commands | 06/03/2026 | 06/03/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 54   | - Learn about Dockerfile <br>- Build custom Docker Images <br>- Understand image layers and image optimization                            | 06/04/2026 | 06/04/2026      | <https://cloudjourney.awsstudygroup.com/> |
+| 55   | - **Practice**:   <br>&emsp;+ Containerize a sample web application   <br>&emsp;+ Build and run Docker Image   <br>&emsp;+ Deploy Docker Container on EC2                                                                                     | 06/05/2026 | 06/05/2026      | <https://cloudjourney.awsstudygroup.com/> |
 
 
 ### Week 8 Achievements:
 
-This week I combined technical work with valuable career orientation learning. On the technical side: researched **event-driven architecture** and designed asynchronous processing flow using **Amazon SQS** + **SNS** for the ticket booking project — when many people book simultaneously, payment requests are pushed to **SQS queue** for workers to process, then **SNS** sends confirmation emails + e-tickets to customers.
+* Developed a solid understanding of containerization technologies and Docker fundamentals.
 
-The biggest highlight of the week was successfully configuring the **SQS** and **SNS** systems on the AWS Console. Practical configuration helped me better understand message passing mechanisms, as well as how to set up a Dead Letter Queue (DLQ) to ensure no data is lost when errors occur during ticket payment processing.
+* Learned the key Docker components, including:
+
+  * Docker Engine
+  * Docker Images
+  * Docker Containers
+  * Docker Hub
+  * Dockerfile
+
+* Understood the differences between traditional virtual machines and container-based deployments.
+
+* Successfully installed and configured Docker on both local and AWS EC2 environments.
+
+* Practiced common Docker operations, including:
+
+  * Pulling images from Docker Hub
+  * Running containers
+  * Managing container lifecycle
+  * Inspecting container status and logs
+
+* Created custom Docker Images using Dockerfiles and gained experience with image build processes.
+
+* Successfully containerized and deployed a sample application using Docker on an EC2 instance.
+
+* Developed practical skills in packaging applications into portable containers, enabling consistent deployment across different environments.

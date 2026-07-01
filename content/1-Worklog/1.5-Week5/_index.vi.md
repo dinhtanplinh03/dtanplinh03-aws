@@ -1,30 +1,54 @@
 ---
 title: "Worklog Tuần 5"
 date: 2024-01-01
-weight: 5
+weight: 1
 chapter: false
 pre: " <b> 1.5. </b> "
 ---
-### Mục tiêu tuần 5:
+# Tuần 5
 
-* Đọc kỹ tài liệu kiến trúc chuẩn của AWS về thiết kế hệ thống chịu tải cao.
-* Tham dự **AWS Event** (23/05) và phân tích các chuyên đề về High Availability và Microservices.
-* Nghiên cứu kiến trúc **Event-Driven Architecture** và **Serverless**.
+## Mục tiêu tuần 5
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
-| --- | --- | --- | --- | --- |
-| 2 | - Đọc tài liệu hướng dẫn triển khai Web của AWS <br> - Tìm hiểu các mô hình kiến trúc High Availability trên AWS | 18/05/2026 | 18/05/2026 | |
-| 3 | - Tìm hiểu sự khác biệt giữa kiến trúc Monolithic và Microservices | 19/05/2026 | 19/05/2026 | |
-| 4 | - Lên AWS Console cấu hình thử Application Load Balancer (ALB) và Auto Scaling Group | 20/05/2026 | 20/05/2026 | |
-| 5 | - Nghiên cứu cơ bản về Event-Driven Architecture (Kiến trúc hướng sự kiện) | 21/05/2026 | 21/05/2026 | |
-| 6 | - Phác thảo sơ đồ kiến trúc nháp cho hệ thống bán vé để xem các dịch vụ kết nối thế nào | 22/05/2026 | 22/05/2026 | |
-| 7 | - Tham dự **AWS Event** (23/05), phân tích các chuyên đề: <br> - Xây dựng hệ thống **High Availability** trên AWS <br> - Phân rã ứng dụng với **Microservices** <br> - Tối ưu hóa chi phí với **Auto Scaling** <br> - Kiến trúc phân phối nội dung **Amazon CloudFront** <br> - Ứng dụng **Event-Driven Architecture** chuẩn doanh nghiệp | 23/05/2026 | 23/05/2026 | |
+* Hiểu các kiến thức cơ bản về mạng trên AWS và Amazon Virtual Private Cloud (Amazon VPC).
+* Học cách thiết kế và cấu hình hạ tầng mạng trên AWS.
+* Thực hành tạo VPC, Subnet, Route Table và cấu hình bảo mật mạng.
 
-### Kết quả đạt được tuần 5:
+## Công việc thực hiện trong tuần
 
-Tuần này mình chủ yếu dành thời gian **nghiên cứu tài liệu kiến trúc gốc của AWS** để nắm được các chuẩn thiết kế hệ thống chịu tải cao, làm nền tảng vững chắc cho kiến trúc dự án lớn.
+| Ngày | Công việc                                                                                                                                                         | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo                      |
+| ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | --------------------------------------- |
+| 30   | - Tìm hiểu các kiến thức cơ bản về mạng trên AWS.<br>- Giới thiệu về Amazon VPC.<br>- Tìm hiểu CIDR và cách cấp phát địa chỉ IP.                                  | 11/05/2026   | 11/05/2026      | https://cloudjourney.awsstudygroup.com/ |
+| 31   | - Tìm hiểu các thành phần của Amazon VPC:<br> + Subnets<br> + Route Tables<br> + Internet Gateway<br> + NAT Gateway                                               | 12/05/2026   | 12/05/2026      | https://cloudjourney.awsstudygroup.com/ |
+| 32   | - **Thực hành:**<br> + Tạo một Custom VPC.<br> + Tạo Public Subnet và Private Subnet.<br> + Cấu hình Route Tables.                                                | 13/05/2026   | 13/05/2026      | https://cloudjourney.awsstudygroup.com/ |
+| 33   | - Tìm hiểu về Security Groups và Network ACLs (NACLs).<br>- Hiểu các quy tắc Inbound và Outbound.<br>- So sánh sự khác nhau giữa Security Groups và Network ACLs. | 14/05/2026   | 14/05/2026      | https://cloudjourney.awsstudygroup.com/ |
+| 34   | - **Thực hành:**<br> + Khởi tạo EC2 trong Custom VPC.<br> + Cấu hình Security Groups.<br> + Kiểm tra kết nối mạng giữa các tài nguyên AWS.                        | 15/05/2026   | 15/05/2026      | https://cloudjourney.awsstudygroup.com/ |
 
-Điểm nhấn lớn nhất là **tham dự AWS Event ngày 23/05** — được trực tiếp phân tích các chuyên đề kỹ thuật cực kỳ hữu ích cho dự án thực tế: xây dựng hệ thống **High Availability**, phân rã ứng dụng với **Microservices**, tối ưu hóa chi phí bằng **Auto Scaling**, kiến trúc phân phối nội dung **Amazon CloudFront**, và đặc biệt là **Event-Driven Architecture** (kiến trúc hướng sự kiện) chuẩn doanh nghiệp.
+## Kết quả đạt được trong tuần 5
 
-Phần CloudFront và Event-Driven Architecture là hai chuyên đề mình thấy thực tế nhất, giúp mình định hình tư duy thiết kế hệ thống tách rời (decoupled) thay vì gom tất cả vào một máy chủ duy nhất.
+* Nắm vững các kiến thức cơ bản về mạng trên AWS và kiến trúc của Amazon Virtual Private Cloud (Amazon VPC).
+
+* Hiểu rõ các thành phần mạng quan trọng trên AWS, bao gồm:
+
+  * Virtual Private Cloud (VPC).
+  * Public Subnet.
+  * Private Subnet.
+  * Route Table.
+  * Internet Gateway.
+  * NAT Gateway.
+  * Security Groups.
+  * Network ACLs (NACLs).
+
+* Tạo và cấu hình thành công một môi trường mạng Custom VPC trên AWS.
+
+* Thực hành thiết kế kiến trúc mạng thông qua các công việc:
+
+  * Tạo Public Subnet và Private Subnet.
+  * Cấu hình Route Tables.
+  * Kết nối các tài nguyên với Internet thông qua Internet Gateway.
+  * Quản lý lưu lượng mạng bằng Security Groups và Network ACLs.
+
+* Tích lũy kinh nghiệm triển khai các EC2 Instance trong Custom VPC và kiểm tra khả năng kết nối giữa các tài nguyên AWS.
+
+* Hiểu rõ sự khác biệt giữa Security Groups và Network ACLs, cũng như vai trò của từng thành phần trong việc bảo vệ hạ tầng mạng trên môi trường đám mây.
+
+* Phát triển kỹ năng thực tế trong việc thiết kế các môi trường mạng an toàn, linh hoạt và có khả năng mở rộng cho các ứng dụng triển khai trên AWS.

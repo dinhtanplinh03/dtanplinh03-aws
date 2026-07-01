@@ -1,30 +1,59 @@
 ---
 title: "Worklog Tuần 4"
 date: 2024-01-01
-weight: 4
+weight: 1
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
-### Mục tiêu tuần 4:
+# Tuần 4
 
-* Học **Module 8** và **Module 9** trên Skill Builder (khóa **AWS Cloud Practitioner Essentials**).
-* Lên Console thực hành vài thứ liên quan **bảo mật** (IAM, Security Group…).
-* Ôn lại cho nhớ trước khi sang module tiếp theo.
+## Mục tiêu tuần 4
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Hoàn thành **Module 8 – AI, ML và phân tích dữ liệu** trên AWS Skill Builder <br> - Giới thiệu Module 8: giới thiệu AI và machine learning <br> - **AI/ML trên AWS:** AI/ML trên AWS; giải pháp AI/ML; giới thiệu Generative AI; giải pháp Generative AI <br> - **Phân tích dữ liệu trên AWS:** giới thiệu phân tích dữ liệu; pipeline dữ liệu <br> - Cloud trong đời thực: phân tích dữ liệu và AI/ML | 11/05/2026   | 11/05/2026      | <https://skillbuilder.aws/>               |
-| 3   | - Hoàn thành **Module 9 – Bảo mật (Security)** trên AWS Skill Builder <br> - Giới thiệu Module 9: giới thiệu bảo mật trên AWS <br> - **Kiểm soát bảo mật AWS:** ngăn truy cập trái phép; bảo vệ mạng và ứng dụng; bảo vệ dữ liệu; phát hiện và ứng phó sự cố; tài nguyên bảo mật bổ sung | 12/05/2026   | 12/05/2026      | <https://skillbuilder.aws/>               |
-| 4   | **Thực hành cơ bản (Module 9):** trên Console xem **IAM** (người dùng, nhóm, chính sách), kiểm tra nhanh khuyến nghị bảo mật tài khoản.                                                                                                                    | 13/05/2026   | 13/05/2026      |                                           |
-| 5   | - Ôn lại **Module 8–9**, ghi chú nhanh phần mình hay quên                                                                                                                                                                                                   | 14/05/2026   | 14/05/2026      |                                           |
-| 6   | **Thực hành (Module 9):** trên Console xem **Security Group** gắn EC2 (vào/ra), chỉnh thử rule **SSH** và **HTTP** cơ bản.                                                                                                                  | 15/05/2026   | 15/05/2026      |                                           |
+* Hiểu về Amazon RDS và các dịch vụ cơ sở dữ liệu được quản lý trên AWS.
+* Học cách tạo, cấu hình và kết nối đến cơ sở dữ liệu quan hệ trên nền tảng đám mây.
+* Thực hành quản lý cơ sở dữ liệu, sao lưu (Backup) và giám sát (Monitoring) bằng Amazon RDS.
 
+## Công việc thực hiện trong tuần
 
-### Kết quả đạt được tuần 4:
+| Ngày | Công việc                                                                                                                                                          | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo                      |
+| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | --------------- | --------------------------------------- |
+| 23   | - Tìm hiểu về các dịch vụ cơ sở dữ liệu của AWS.<br>- Giới thiệu về Amazon RDS.<br>- Tìm hiểu khái niệm cơ sở dữ liệu được quản lý (Managed Database).             | 04/05/2026   | 04/05/2026      | https://cloudjourney.awsstudygroup.com/ |
+| 24   | - Tìm hiểu các hệ quản trị cơ sở dữ liệu được Amazon RDS hỗ trợ:<br> + MySQL<br> + PostgreSQL<br> + MariaDB<br> + Microsoft SQL Server                             | 05/05/2026   | 05/05/2026      | https://cloudjourney.awsstudygroup.com/ |
+| 25   | - **Thực hành:**<br> + Tạo một Amazon RDS MySQL Instance.<br> + Cấu hình các thiết lập của cơ sở dữ liệu.<br> + Tìm hiểu và cấu hình các tùy chọn bảo mật.         | 06/05/2026   | 06/05/2026      | https://cloudjourney.awsstudygroup.com/ |
+| 26   | - Kết nối đến Amazon RDS bằng MySQL Workbench.<br>- Tạo cơ sở dữ liệu và bảng dữ liệu.<br>- Thực hiện các thao tác CRUD cơ bản.                                    | 07/05/2026   | 07/05/2026      | https://cloudjourney.awsstudygroup.com/ |
+| 27   | - Tìm hiểu về Backup và Snapshot trong Amazon RDS.<br>- Thực hành tạo Manual Snapshot.<br>- Tìm hiểu các tính năng giám sát (Monitoring) và bảo trì (Maintenance). | 08/05/2026   | 08/05/2026      | https://cloudjourney.awsstudygroup.com/ |
 
-Tuần này mình xong **Module 8** và **Module 9** trên Skill Builder. **Module 8** hơi "xa" so với mấy tuần trước (AI/ML, Generative AI, phân tích dữ liệu…) nhưng ít nhất biết AWS có những hướng đó; **Module 9** gần hơn vì nhắc lại IAM, bảo vệ mạng/dữ liệu — khớp với EC2, VPC các tuần trước.
+## Kết quả đạt được trong tuần 4
 
-Về thực hành: **13/05** mình xem **IAM** trên Console (người dùng, nhóm, chính sách), kiểm tra khuyến nghị bảo mật; **15/05** mở **Security Group** của EC2, xem luật vào/ra rồi chỉnh thử SSH/HTTP. **14/05** ôn Module 8–9, ghi chú chỗ hay nhầm (Generative AI, pipeline dữ liệu, phân quyền IAM…) cho khỏi quên khi học tiếp.
+* Nắm vững kiến thức về các dịch vụ cơ sở dữ liệu được quản lý trên AWS và kiến trúc của Amazon RDS.
 
+* Hiểu rõ các thành phần và khái niệm quan trọng của Amazon RDS, bao gồm:
 
+  * Database Instances.
+  * Database Engines.
+  * Storage Allocation.
+  * Backups và Snapshots.
+  * Security Groups.
+
+* Tạo và cấu hình thành công một Amazon RDS MySQL Database Instance.
+
+* Thực hành kết nối cơ sở dữ liệu trên nền tảng đám mây bằng các công cụ quản lý cơ sở dữ liệu như **MySQL Workbench**.
+
+* Thực hiện thành thạo các thao tác quản lý cơ sở dữ liệu:
+
+  * Tạo cơ sở dữ liệu (Database).
+  * Tạo bảng (Table).
+  * Thêm dữ liệu (Insert).
+  * Cập nhật dữ liệu (Update).
+  * Truy vấn dữ liệu (Query).
+
+* Hiểu cách Amazon RDS giúp đơn giản hóa việc quản trị cơ sở dữ liệu thông qua các tính năng tự động như:
+
+  * Sao lưu dữ liệu (Backup).
+  * Cập nhật phần mềm (Software Patching).
+  * Giám sát hệ thống (Monitoring).
+  * Bảo trì (Maintenance).
+
+* Tạo và quản lý thành công các Snapshot của cơ sở dữ liệu để phục vụ cho mục đích sao lưu và khôi phục dữ liệu.
+
+* Tích lũy kinh nghiệm thực tế khi làm việc với cơ sở dữ liệu quan hệ trên môi trường điện toán đám mây, đồng thời hiểu cách các ứng dụng có thể kết nối an toàn đến Amazon RDS.

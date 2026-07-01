@@ -1,27 +1,53 @@
 ---
 title: "Worklog Tuần 6"
 date: 2024-01-01
-weight: 6
+weight: 1
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
-### Mục tiêu tuần 6:
+# Tuần 6
 
-* Hoàn thành **Module 10** (Migration) và **Module 11** (Well-Architected Framework).
-* Nắm vững 6 trụ cột thiết kế hệ thống trên AWS.
-* Tổng ôn 11 Module và hoàn thành bài **Final Assessment**.
+## Mục tiêu tuần 6
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
-| --- | --- | --- | --- | --- |
-| 2 | - Hoàn thành **Module 10 – Migration và Innovation**: AWS CAF, chiến lược di chuyển, Snow Family | 25/05/2026 | 25/05/2026 | <https://skillbuilder.aws/> |
-| 3 | - Hoàn thành **Module 11 – AWS Well-Architected Framework**: nắm vững **6 trụ cột** cốt lõi | 26/05/2026 | 26/05/2026 | <https://skillbuilder.aws/> |
-| 4 | - Thực hành phương pháp tối ưu chi phí: tính toán chi phí dự kiến bằng **AWS Pricing Calculator** | 27/05/2026 | 27/05/2026 | |
-| 5 | - Tổng ôn kiến thức **11 Module**, ghi chú phần hay nhầm và đối chiếu với các kiến trúc đã học | 28/05/2026 | 28/05/2026 | |
-| 6 | - Hoàn thành bài **Final Assessment** để chốt lộ trình lý thuyết **AWS Cloud Practitioner** <br> - Xem lại kết quả, ghi chú phần cần ôn thêm | 29/05/2026 | 29/05/2026 | <https://skillbuilder.aws/> |
+* Hiểu về các dịch vụ giám sát (Monitoring) và ghi nhật ký (Logging) trên AWS.
+* Học cách giám sát tài nguyên AWS, thu thập nhật ký và cấu hình cảnh báo bằng Amazon CloudWatch.
+* Thực hành theo dõi hiệu năng hệ thống và mức độ sử dụng tài nguyên.
 
-### Kết quả đạt được tuần 6:
+## Công việc thực hiện trong tuần
 
-Tuần này mình hoàn thành **2 Module** cuối cùng của khóa học: **Module 10** (Migration, Snow Family) và **Module 11** (Well-Architected Framework). Đặc biệt **Module 11** giúp mình nắm vững thiết kế hạ tầng AWS theo **6 trụ cột** cốt lõi (Bảo mật, Hiệu suất, Tối ưu chi phí, Độ tin cậy, Vận hành xuất sắc, Phát triển bền vững) — đây là nền tảng cực kỳ quan trọng để thiết kế kiến trúc chuẩn. Mình cũng đã làm quen với **AWS Pricing Calculator** để ước tính chi phí.
+| Ngày | Công việc                                                                                                                                                     | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo                      |
+| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | --------------------------------------- |
+| 37   | - Tìm hiểu về Monitoring và Observability trên AWS.<br>- Giới thiệu về Amazon CloudWatch.<br>- Tìm hiểu các khái niệm Metrics, Logs và Events.                | 18/05/2026   | 18/05/2026      | https://cloudjourney.awsstudygroup.com/ |
+| 38   | - Tìm hiểu CloudWatch Metrics.<br>- Theo dõi các chỉ số hiệu năng của Amazon EC2:<br> + CPU Utilization.<br> + Network Traffic.<br> + Disk Activity.          | 19/05/2026   | 19/05/2026      | https://cloudjourney.awsstudygroup.com/ |
+| 39   | - Tìm hiểu về CloudWatch Logs.<br>- Cấu hình thu thập nhật ký (Logs) từ EC2.<br>- Phân tích nhật ký hệ thống và ứng dụng.                                     | 20/05/2026   | 20/05/2026      | https://cloudjourney.awsstudygroup.com/ |
+| 40   | - Tìm hiểu về CloudWatch Alarms.<br>- Tạo cảnh báo dựa trên CPU Utilization và hiệu năng hệ thống.<br>- Cấu hình các hành động gửi thông báo khi có cảnh báo. | 21/05/2026   | 21/05/2026      | https://cloudjourney.awsstudygroup.com/ |
+| 41   | - **Thực hành:**<br> + Tạo CloudWatch Dashboard.<br> + Giám sát các tài nguyên EC2 và Amazon RDS.<br> + Kiểm tra và phân tích Metrics cùng Logs đã thu thập.  | 22/05/2026   | 22/05/2026      | https://cloudjourney.awsstudygroup.com/ |
 
-Cuối tuần mình **tổng ôn toàn bộ 11 Module** rồi hoàn thành bài **Final Assessment** — chính thức chốt lộ trình lý thuyết **AWS Cloud Practitioner**. Coi như xong một cột mốc lớn 🎉, tạo tiền đề vững chắc để bắt tay vào thiết kế và triển khai dự án thực tế trong các tuần tới.
+## Kết quả đạt được trong tuần 6
+
+* Nắm vững kiến thức về các dịch vụ giám sát (Monitoring) và quan sát hệ thống (Observability) trên AWS.
+
+* Hiểu rõ các thành phần cốt lõi của Amazon CloudWatch, bao gồm:
+
+  * Metrics.
+  * Logs.
+  * Alarms.
+  * Dashboards.
+  * Events.
+
+* Theo dõi và phân tích thành công các chỉ số hiệu năng của tài nguyên AWS như:
+
+  * CPU Utilization.
+  * Network Traffic.
+  * Disk Activity.
+  * Các chỉ số hiệu năng của cơ sở dữ liệu (Database Performance Metrics).
+
+* Cấu hình CloudWatch Logs để thu thập và phân tích nhật ký hệ thống cũng như nhật ký ứng dụng từ các tài nguyên AWS.
+
+* Tạo CloudWatch Alarms nhằm phát hiện sớm các dấu hiệu sử dụng tài nguyên bất thường, từ đó hỗ trợ giám sát hệ thống một cách chủ động.
+
+* Xây dựng CloudWatch Dashboard tùy chỉnh để trực quan hóa và theo dõi hiệu năng của hạ tầng AWS trên một giao diện tập trung.
+
+* Tích lũy kinh nghiệm thực tế trong việc giám sát môi trường điện toán đám mây, phát hiện các vấn đề về hiệu năng và nâng cao khả năng quan sát hoạt động của hệ thống.
+
+* Nâng cao khả năng sử dụng Amazon CloudWatch như một giải pháp giám sát tập trung cho hạ tầng và các ứng dụng triển khai trên AWS.

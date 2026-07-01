@@ -5,34 +5,39 @@ weight: 1
 chapter: false
 ---
 
+    
 # Internship Report
 
+{{% notice warning %}}
+⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
+{{% /notice %}}
+
 ### Student Information:
-&emsp; **Full Name:** Nguyen Phuc Thinh
+&emsp; **Full Name:** Nguyen Van A
 
-&emsp; **Phone Number:** 0365981370 
+&emsp; **Phone Number:** 0989888999 
 
-&emsp; **Email:** thinh270924@gmail.com
+&emsp; **Email:** Anguyenvan@gmail.com
 
-&emsp; **University:** Ho Chi Minh City University of Technology (HUTECH)
+&emsp; **University:** Ho Chi Minh City University of Technology and Education
 
 &emsp; **Major:** Information Technology
 
-&emsp; **Class:** 22DTHC1
+&emsp; **Class:** AWS082025
 
-&emsp; **Internship Company:** Amazon Web Services Vietnam Co., Ltd.
+&emsp; **Internship Company:** Amazon Web Services Viet Nam Company Limited
 
 &emsp; **Internship Position:** Workforce Bootcamp - First Cloud AI Journey
 
-&emsp; **Internship Duration:** From 20/04/2026 to 10/07/2026
+&emsp; **Internship Duration:** From 12/08/2025 to 12/11/2025
 
-<img src="/images/avatar.jpg" alt="Your profile picture" width="350" style="border-radius: 8px;" />
+![Your profile picture](/images/avatar.png)
 
 ### Report Content
 
 1.  [Worklog](1-Worklog/)
 2.  [Proposal](2-Proposal/)
-3.  [Translated Blogs](3-BlogsTranslated/)
+3.  [BlogsPosted](3-BlogsPosted/)
 4.  [Events Participated](4-EventParticipated/)
 5.  [Workshop](5-Workshop/)
 6.  [Self-evaluation](6-Self-evaluation/)
