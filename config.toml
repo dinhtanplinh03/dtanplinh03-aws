@@ -1,6 +1,6 @@
-baseURL = "https://dinhtanplinh03.github.io/dtanplinh03-aws/"
-relativeURLs = true
-canonifyURLs = false
+baseURL = "https://dinhtanplinh03.github.io/"
+relativeURLs = false
+canonifyURLs = true
 defaultContentLanguage = "en"
 
 # Change the default theme to be use when building the site with Hugo
