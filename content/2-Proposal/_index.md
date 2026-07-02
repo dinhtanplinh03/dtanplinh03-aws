@@ -61,8 +61,7 @@ The system is deployed in a custom VPC with isolated Public and Private subnets 
 
 #### 3.1 Architecture Diagram
 
-![System Architecture](images/2-Proposal/ticket_app_architecture.png)
-
+![System Architecture](/images/2-Proposal/ticket_app_architecture.png)
 
 #### 3.2 AWS Services Details
 

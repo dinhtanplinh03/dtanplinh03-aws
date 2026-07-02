@@ -61,7 +61,7 @@ Hệ thống được thiết kế theo mô hình VPC chuẩn với các lớp m
 
 #### 3.1 Sơ đồ kiến trúc hệ thống
 
-![Sơ đồ kiến trúc hệ thống](images/2-Proposal/ticket_app_architecture.png)
+![Sơ đồ kiến trúc hệ thống](/images/2-Proposal/ticket_app_architecture.png)
 
 
 #### 3.2 Các dịch vụ AWS sử dụng
