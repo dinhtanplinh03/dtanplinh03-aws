@@ -5,27 +5,81 @@ weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-# SESSION POLICIES TRONG AMAZON EKS POD IDENTITY
+# HỖ TRỢ PHÁT TRIỂN TRÒ CHƠI VỚI AWS CLOUD GAME DEVELOPMENT TOOLKIT
 
-Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+## Giới thiệu
 
-Các điểm chính cần nắm:
+Trong quá trình phát triển trò chơi, các studio thường gặp nhiều khó khăn trong việc xây dựng hệ thống quản lý mã nguồn, tự động hóa quy trình build và triển khai hạ tầng. Đối với các nhóm phát triển từ xa hoặc các dự án có quy mô lớn, việc tự xây dựng và vận hành hạ tầng không chỉ tốn nhiều thời gian mà còn làm tăng chi phí.
 
-* Session policy là một IAM policy inline được chỉ định khi tạo hoặc cập nhật Pod Identity association.
-* Quyền hiệu quả = intersection (giao) giữa permissions của IAM role và session policy → session policy chỉ có thể thu hẹp, không thể mở rộng quyền.
-* Giúp tránh tình trạng over-permissioning khi reuse chung một IAM role cho nhiều workloads có nhu cầu khác nhau.
-* Hỗ trợ cả same-account và cross-account (qua IAM role chaining).
-* Giảm đáng kể số lượng IAM roles cần quản lý, tránh chạm giới hạn quota IAM trong cluster lớn.
-* Cấu hình dễ dàng qua AWS Management Console, AWS CLI hoặc AWS SDK khi tạo association giữa Kubernetes ServiceAccount và IAM role.
+Để giải quyết vấn đề này, AWS đã phát triển **Cloud Game Development Toolkit**. Đây là một bộ công cụ mã nguồn mở cung cấp sẵn các mẫu cấu hình **Terraform** và **Packer**, giúp các studio trò chơi nhanh chóng triển khai môi trường phát triển trên AWS, rút ngắn thời gian thiết lập từ nhiều tuần xuống chỉ còn vài giờ.
 
-Tính năng này đặc biệt hữu ích khi bạn có nhiều ứng dụng chạy trên cùng một IAM role nhưng cần giới hạn quyền khác nhau (ví dụ: một pod chỉ đọc S3 bucket cụ thể, pod khác chỉ gọi một số API nhất định).
+## Những thách thức trong phát triển trò chơi
 
-...Hình ảnh...
+Việc xây dựng một dự án trò chơi hiện đại thường gặp nhiều khó khăn như:
 
-...Link...
+- Thời gian build kéo dài và dễ phát sinh lỗi.
+- Việc quản lý khối lượng lớn tài nguyên của trò chơi còn nhiều hạn chế.
+- Khó khăn trong quá trình cộng tác giữa các thành viên làm việc ở nhiều địa điểm khác nhau.
+- Thiếu hệ thống quản lý phiên bản và quy trình CI/CD phù hợp cho các dự án quy mô lớn.
+- Chi phí đầu tư phần cứng và vận hành hạ tầng cao.
 
-...Hướng dẫn...
+## Giải pháp với AWS Cloud Game Development Toolkit
+
+Cloud Game Development Toolkit cung cấp đầy đủ các thành phần cần thiết để xây dựng môi trường phát triển trò chơi trên AWS.
+
+### 1. Quản lý mã nguồn với Perforce
+
+Bộ công cụ hỗ trợ triển khai nhanh hệ thống **Perforce P4** trên AWS, bao gồm:
+
+- Máy chủ Perforce chạy trên **Amazon EC2** và lưu trữ dữ liệu bằng **Amazon EBS**.
+- Dịch vụ xác thực và đánh giá mã nguồn chạy trên **Amazon ECS**.
+- Tự động cấu hình xác thực và kết nối cho nhóm phát triển.
+
+Nhờ đó, các thành viên trong nhóm có thể dễ dàng chia sẻ tài nguyên, quản lý phiên bản và cộng tác hiệu quả hơn.
+
+### 2. Tăng tốc quy trình Build với Horde
+
+Đối với các dự án sử dụng **Unreal Engine**, bộ công cụ hỗ trợ triển khai **Unreal Engine Horde** – hệ thống **CI/CD** chuyên dụng dành cho phát triển trò chơi.
+
+Các tính năng nổi bật bao gồm:
+
+- Tự động hóa quy trình build và kiểm thử.
+- Hỗ trợ các **Build Agent** có khả năng tự động mở rộng theo nhu cầu.
+- Tích hợp trực tiếp với **Perforce**.
+- Cung cấp giao diện trực quan để theo dõi và quản lý các phiên build.
+- Hỗ trợ **Unreal Build Accelerator** nhằm tăng tốc quá trình biên dịch.
+
+### 3. Kiến trúc giải pháp trên AWS
+
+Cloud Game Development Toolkit tận dụng nhiều dịch vụ của AWS như:
+
+- **Amazon VPC** và **Amazon Route 53** để xây dựng hạ tầng mạng.
+- **Amazon EC2** và **Amazon EBS** để vận hành máy chủ xử lý chính.
+- **Amazon ECS** để chạy các dịch vụ container.
+- **Amazon DocumentDB** và **Amazon ElastiCache** nhằm hỗ trợ hệ thống Horde.
+- **AWS Certificate Manager** để quản lý chứng chỉ bảo mật.
+
+Toàn bộ hạ tầng được triển khai theo mô hình **Infrastructure as Code (IaC)**, giúp việc quản lý, mở rộng và tái sử dụng trở nên đơn giản và hiệu quả hơn.
+
+## Lợi ích của Cloud Game Development Toolkit
+
+Cloud Game Development Toolkit mang lại nhiều lợi ích cho các studio phát triển trò chơi, bao gồm:
+
+- Triển khai hạ tầng nhanh chóng chỉ trong vài giờ.
+- Tự động áp dụng các **AWS Best Practices**.
+- Dễ dàng mở rộng khi quy mô dự án tăng lên.
+- Tối ưu chi phí thông qua **Auto Scaling** và **Amazon EC2 Spot Instances**.
+- Giúp nhóm phát triển tập trung vào việc xây dựng trò chơi thay vì quản lý hạ tầng.
+
+## Tổng kết
+
+Thông qua **Cloud Game Development Toolkit**, AWS giúp các studio trò chơi xây dựng một môi trường phát triển hiện đại, linh hoạt và tiết kiệm chi phí. Bộ công cụ này góp phần rút ngắn thời gian triển khai hạ tầng, tối ưu quy trình phát triển và đẩy nhanh quá trình đưa sản phẩm ra thị trường.
+
+![](img/1.png)
+
+![](img/2.png)
+
+![](img/3.png)
+
+**Link tham khảo:** https://aws.amazon.com/vi/blogs/gametech/game-development-infrastructure-simplified-with-aws-game-dev-toolkit/
