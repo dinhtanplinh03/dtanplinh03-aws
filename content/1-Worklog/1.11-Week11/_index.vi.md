@@ -1,59 +1,43 @@
 ---
-title: "Worklog Tuần 11"
+
+title: "Nhật ký công việc Tuần 11"
 date: 2024-01-01
 weight: 2
 chapter: false
 pre: " <b> 1.11. </b> "
----
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+-----------------------
 
+### Mục tiêu Tuần 11:
 
-### Mục tiêu tuần 11:
+* Triển khai cơ chế gửi nhận tin nhắn bất đồng bộ bằng Amazon SNS và Amazon SQS.
+* Cấu hình giám sát và ghi log bằng Amazon CloudWatch.
+* Kiểm thử và xác thực luồng xử lý tin nhắn cũng như hệ thống giám sát.
+* Chuẩn bị dự án cho giai đoạn triển khai và trình bày cuối cùng.
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### Các công việc thực hiện trong tuần:
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Ngày | Công việc                                                                                                                                                    | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo                                                   |
+| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | --------------- | -------------------------------------------------------------------- |
+| 72   | - Tìm hiểu các khái niệm của Amazon SNS và quy trình gửi thông báo.<br>- Tạo SNS Topic và cấu hình các Subscription.<br>- Kiểm thử việc gửi thông điệp.      | 06/29/2026   | 06/29/2026      | https://docs.aws.amazon.com/sns/                                     |
+| 73   | - Tìm hiểu Amazon SQS (Standard Queue, FIFO Queue, Dead Letter Queue).<br>- Tạo và cấu hình các hàng đợi SQS.<br>- Kiểm thử việc gửi và nhận tin nhắn.       | 06/30/2026   | 06/30/2026      | https://docs.aws.amazon.com/sqs/                                     |
+| 74   | - Tích hợp Amazon SNS với Amazon SQS.<br>- Cấu hình chính sách truy cập (Queue Policy).<br>- Kiểm tra việc truyền thông điệp từ đầu đến cuối.                | 07/01/2026   | 07/01/2026      | https://docs.aws.amazon.com/sns/latest/dg/sns-sqs-as-subscriber.html |
+| 75   | - Cấu hình CloudWatch Logs và CloudWatch Metrics.<br>- Tạo CloudWatch Alarm để giám sát trạng thái ứng dụng.<br>- Kiểm tra việc thu thập log.                | 07/02/2026   | 07/02/2026      | https://docs.aws.amazon.com/cloudwatch/                              |
+| 76   | - Kiểm thử toàn bộ luồng xử lý tin nhắn.<br>- Phân tích Metrics và Logs trên CloudWatch.<br>- Khắc phục các lỗi cấu hình và hoàn thiện quá trình triển khai. | 07/03/2026   | 07/03/2026      | https://docs.aws.amazon.com/                                         |
 
+### Kết quả đạt được trong Tuần 11:
 
-### Kết quả đạt được tuần 11:
+* Triển khai thành công Amazon SNS để gửi thông báo giữa các thành phần của ứng dụng.
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Cấu hình Amazon SQS nhằm hỗ trợ xử lý tin nhắn bất đồng bộ một cách ổn định và đáng tin cậy.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Tích hợp thành công Amazon SNS với Amazon SQS và xác minh việc truyền thông điệp hoạt động chính xác.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Cấu hình Amazon CloudWatch để thu thập log, theo dõi các chỉ số (Metrics) và thiết lập cảnh báo (Alarms) khi hệ thống có dấu hiệu bất thường.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Kiểm thử hoàn chỉnh luồng xử lý tin nhắn và xác nhận rằng các thông điệp được xử lý đúng như mong đợi.
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+* Nâng cao hiểu biết về kiến trúc hướng sự kiện (Event-driven Architecture) thông qua việc sử dụng các dịch vụ nhắn tin của AWS.
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+* Tăng cường khả năng giám sát hệ thống bằng CloudWatch Logs, Metrics và Alarms.
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Hoàn thành việc triển khai và kiểm thử các thành phần nhắn tin và giám sát, sẵn sàng cho buổi trình bày và triển khai cuối cùng của dự án.
