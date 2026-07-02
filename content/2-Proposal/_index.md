@@ -17,12 +17,13 @@ pre: " <b> 2. </b> "
 ### 2. Concept & Objectives (Problem Statement)
 
 #### 2.1 Context & Problem
-*   **What is the system used for?** 
-    Ticketing-App is an online event ticketing platform designed to handle high concurrency during "flash sale" events.
-*   **Who is the customer?** 
-    End-users are audiences expecting a smooth ticket-purchasing experience. Business clients (B2B) are event organizers who need a stable, crash-free platform to protect their brand image.
-*   **What problem does it solve?**
-    Traditional ticketing systems often crash or suffer from database connection exhaustion when thousands of users access them simultaneously. Ticketing-App solves this with a decoupled architecture and message queuing, ensuring zero dropped orders.
+*   **System Purpose:**
+    **Ticketing-App** is a dedicated online event ticketing platform designed specifically to handle high concurrency and traffic spikes during time-limited ticket releases ("flash sale" events).
+*   **Target Audience:**
+    The platform serves two primary groups: end-users (ticket buyers) who demand a seamless and lag-free booking experience, and event organizers (B2B clients) who require a highly stable, crash-free system to protect their brand reputation.
+*   **Problem Statement:**
+    Traditional ticketing platforms frequently suffer from server crashes or database connection exhaustion when thousands of users attempt to purchase tickets simultaneously. **Ticketing-App** resolves this bottleneck through a decoupled architecture integrated with message queues, ensuring that no booking requests are dropped or lost.
+
 
 #### 2.2 Specific Goals
 *   **Desired Output:** 
@@ -69,7 +70,7 @@ The system is deployed in a custom VPC with isolated Public and Private subnets 
 | :--- | :--- | :--- |
 | **Compute** | Elastic Beanstalk | Deploys and manages two isolated environments: Backend API and SQS processing Worker. |
 | **Compute** | EC2 Instances | Runs Amazon Linux 2023, Node.js 24 runtime, utilizing `t3.micro` instance types. |
-| **Compute** | Auto Scaling Group | Scales between a minimum of 2 instances and a maximum of 4 instances per tier based on demand. |
+| **Compute** | Auto Scaling Group | Scales between a minimum of 2 and a maximum of 4 instances. Scale-out is triggered when average CPU utilization exceeds 70% for 3 minutes (for Backend API) or when SQS message backlog increases (for Worker). |
 | **Frontend** | Amazon S3 | Serves the HTML, CSS, and JS assets using S3 Static Website Hosting for cost-effective content delivery. |
 | **Database** | RDS PostgreSQL | Runs PostgreSQL version 18.3, instance class `db.t3.small`, 20GB gp3 storage, KMS-encrypted, configured with Multi-AZ for failover. |
 | **Database Proxy**| RDS Proxy | Performs connection pooling to handle connections efficiently and protect the database database instance. |
@@ -171,7 +172,7 @@ The system utilizes an **Event-Driven Microservices** architecture to decouple u
 #### 8.2 Architectural Strengths
 
 *   **Scalability and Decoupling:** 
-    The Frontend, Backend API, and Worker tiers operate independently, allowing targeted auto-scaling based on specific load metrics. SQS acts as a buffer to handle traffic spikes without overloading the PostgreSQL database.
+    The Frontend, Backend API, and Worker tiers operate independently, allowing targeted auto-scaling based on the distinct load of each tier. The Backend API scales based on CPU utilization (scale-out when average CPU exceeds 70%), while the Worker tier scales based on SQS queue length (Message Backlog). SQS acts as a buffer to handle traffic spikes without overloading the PostgreSQL database.
 *   **Data Consistency:** 
     The combination of Redis distributed locks and SQS FIFO (exactly-once processing) guarantees strict data consistency across ticket reservations and payment processing, routing any failures to a Dead Letter Queue (DLQ) for debugging.
 *   **Modern Frontend Stack:** 

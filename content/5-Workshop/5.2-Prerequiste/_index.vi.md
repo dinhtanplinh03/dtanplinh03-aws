@@ -257,6 +257,7 @@ Nếu bạn muốn cấu hình chính sách phân quyền tối thiểu (Least P
 7. Tiến hành gán chính sách này vào **IAM User** của bạn (truy cập menu **Users** -> chọn User của bạn -> **Add permissions** -> **Attach policies directly** và chọn chính sách `TicketAppCleanupPolicy` vừa tạo).
 
 
+
 ---
 
 #### 2. Cài đặt môi trường phát triển cục bộ (Local Workspace Setup)
@@ -278,15 +279,6 @@ Hãy đảm bảo máy trạm của bạn đã được cài đặt sẵn các c
     git --version
     ```
 
-##### C. AWS CLI & Configure
-*   Cài đặt công cụ dòng lệnh AWS CLI để tương tác với tài khoản AWS.
-*   Sau khi cài đặt, chạy lệnh sau để cấu hình thông tin xác thực (Access Key & Secret Key) của IAM User đã được phân quyền:
-    ```bash
-    aws configure
-    ```
-    *   *Default region name:* `us-east-1` (N. Virginia)
-    *   *Default output format:* `json`
-
 ---
 
 #### 3. Tải mã nguồn dự án (Project Source Code)
@@ -298,9 +290,11 @@ Mã nguồn của ứng dụng Ticket-App được chia làm 3 thư mục chính
 
 Hãy clone dự án từ repository workshop của bạn:
 ```bash
-git clone https://github.com/free-cloud-journey/ticket-app-workshop.git
-cd ticket-app-workshop
+git clone https://github.com/thinh2709/Project-FCAJ.git
+cd Project-FCAJ
 ```
+
+
 
 ---
 
@@ -309,7 +303,7 @@ cd ticket-app-workshop
 Trong workshop này, bạn có thể lựa chọn 1 trong 2 phương thức sau để xây dựng cơ sở hạ tầng mạng và máy chủ:
 
 *   **Lựa chọn A (Khuyên dùng - Nhanh chóng): Triển khai tự động bằng AWS CloudFormation**
-    *   Hạ tầng sẽ được khởi tạo hoàn toàn tự động chỉ sau 15-20 phút.
+    *   Hạ tầng sẽ được khởi tạo hoàn toàn tự động.
     *   Các chương từ **5.3 đến 5.7** sẽ đóng vai trò là hướng dẫn để bạn **Kiểm tra và Xác thực** cấu hình tài nguyên đã được tạo thay vì phải tự tạo lại.
 *   **Lựa chọn B: Tự tay cấu hình thủ công từng bước (Manual)**
     *   Bạn sẽ **bỏ qua** bước 4 (chạy CloudFormation) dưới đây.
@@ -319,29 +313,31 @@ Trong workshop này, bạn có thể lựa chọn 1 trong 2 phương thức sau 
 
 #### Hướng dẫn cho Lựa chọn A: Triển khai tự động bằng CloudFormation
 
-Toàn bộ hạ tầng cốt lõi của ứng dụng (VPC, RDS, Redis, Beanstalk, SQS, Cognito, API Gateway, CloudFront, CI/CD Pipeline) sẽ được triển khai tự động thông qua file CloudFormation template ```template.yaml```.
+Để chuẩn bị cho môi trường làm workshop, chúng ta deploy CloudFormation template sau (click link): [TicketAppStack](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/review?stackName=ticket-app-stack&templateURL=https://fcaj-ticketing-templates.s3.amazonaws.com/template-cloudformation.yaml). Để nguyên các lựa chọn mặc định.
 
-1. Mở [AWS CloudFormation console](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks).
-2. Click **Create stack** -> chọn **With new resources (standard)**.
-3. Tại giao diện **Prerequisite - Prepare template**, chọn **Template is ready**:
-   * **Template source**: Chọn **Upload a template file**.
-   * Click **Choose file** và tải lên tệp tin ```template.yaml``` trong thư mục dự án của bạn.
-   * Click **Next**.
+{{% notice info %}}
+**Lưu ý về phạm vi triển khai**: 
+Nếu chọn triển khai tự động bằng CloudFormation, hệ thống sẽ tự động khởi tạo sẵn các tài nguyên cơ bản. Bạn có thể **bỏ qua bước tạo thủ công** và chỉ cần đọc hướng dẫn để **Kiểm tra/Xác minh** cấu hình đối với các phần sau:
+*   **Chương 5.3 (Hạ tầng Mạng & Bảo mật)**: 5.3.1 (Khởi tạo VPC & Subnets), 5.3.2 (Định tuyến & NAT Gateways), và một phần của 5.3.3 (Secrets Manager, 2 Security Groups `ticket-app-alb-sg` và `ticket-app-ec2-worker-sg`).
+*   **Chương 5.4 (Tầng Giao diện)**: 5.4.1 (Khởi tạo Amazon S3 Buckets).
+*   **Chương 5.5 (Tầng Application & Messaging)**: 5.5.1 (Cấu hình SQS FIFO & DLQ), 5.5.2 (Triển khai Beanstalk).
+*   **Chương 5.7 (Xác thực & Cổng API)**: 5.7.1 (Cognito User Pool).
+{{% /notice %}}
 
-4. Tại giao diện **Specify stack details**:
-   * **Stack name**: Nhập ```ticket-app-stack```.
-   * **Parameters**:
-     * **EnvironmentName**: Nhập ```ticket-app```.
-     * **DBMasterUsername**: ```postgres```.
-     * **DBName**: ```ticketing_db``` (Lưu ý sử dụng đồng bộ tên Database này xuyên suốt bài lab).
-     * Giữ nguyên các tham số mặc định khác.
-   * Click **Next**.
+1. Trình duyệt sẽ mở bảng điều khiển CloudFormation Console và tự động điền sẵn các cấu hình.
+2. Tại màn hình **Specify stack details**, kiểm tra các tham số rồi click **Next**.
+3. Cuộn xuống cuối trang Review, tích chọn **I acknowledge that AWS CloudFormation might create IAM resources with custom names.** và click **Submit** để bắt đầu triển khai.
+4. Đợi cho đến khi quá trình khởi tạo hoàn tất (Trạng thái chuyển sang `CREATE_COMPLETE`).
 
-5. Tại giao diện **Configure stack options**, giữ nguyên cấu hình mặc định và click **Next**.
-6. Tại giao diện **Review ticket-app-stack**:
-   * Cuộn xuống cuối trang, tích chọn **I acknowledge that AWS CloudFormation might create IAM resources with custom names.** (Xác nhận cấp quyền cho CloudFormation tạo các IAM Roles).
-   * Click **Submit** để bắt đầu triển khai.
+Sau khi CloudFormation Stack triển khai thành công, phần lớn hạ tầng cơ bản của bạn đã hoàn tất! Ở các chương tiếp theo, nếu đi theo **Lựa chọn A**, bạn chỉ cần đọc hướng dẫn để **xác minh cấu hình** đối với các phần đã được tạo tự động, đồng thời **bắt buộc phải tự tay thực hiện** các bước cấu hình và triển khai sau:
 
-7. Quá trình triển khai sẽ mất khoảng **15 - 20 phút** để khởi tạo toàn bộ tài nguyên (đặc biệt là RDS Multi-AZ, CloudFront CDN và Beanstalk Environments). Hãy đợi cho đến khi trạng thái chuyển sang **CREATE_COMPLETE**.
-
-Sau khi CloudFormation Stack triển khai thành công, hạ tầng cơ bản của bạn đã hoàn thành! Ở các chương tiếp theo, nếu đi theo **Lựa chọn A**, bạn chỉ cần đi qua các dịch vụ để **xác minh và kiểm tra** cấu hình, sau đó tiến hành các bước deploy source code.
+*   **Bài 5.3.3 (Bảo mật)**: Tạo 3 Security Groups còn lại (`ticket-app-rds-proxy-sg`, `ticket-app-rds-instance-sg`, `ticket-app-redis-sg`).
+*   **Bài 5.4.2 (CloudFront)**: Cấu hình CloudFront Distribution & Bảo mật WAF.
+*   **Bài 5.4.3 (Deploy)**: Triển khai code Frontend lên S3.
+*   **Bài 5.5.3 (SNS)**: Thông báo SNS & Giám sát DLQ.
+*   **Bài 5.5.4 (SES)**: Cấu hình Amazon SES (Email) & SMTP Credentials.
+*   **Bài 5.6.1 (RDS)**: Tạo Database RDS PostgreSQL & RDS Proxy.
+*   **Bài 5.6.2 (Redis)**: Cấu hình ElastiCache Redis.
+*   **Bài 5.7.2 (ApiGateway)**: Tạo API Gateway & cấu hình Cognito Authorizer, Routes, CORS.
+*   **Chương 5.8 (CI/CD)**: Tạo CodeCommit, CodeBuild, CodePipeline & đẩy mã nguồn để kích hoạt CI/CD.
+*   **Chương 5.9 (Test)**: Kiểm thử & Xác thực hệ thống.

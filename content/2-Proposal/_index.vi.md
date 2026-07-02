@@ -17,12 +17,13 @@ pre: " <b> 2. </b> "
 ### 2. Ý tưởng & Mục tiêu (Tuyên bố vấn đề)
 
 #### 2.1 Bối cảnh & Bài toán
-*   **Hệ thống dùng để làm gì?** 
-    Ticketing-App là nền tảng đặt vé sự kiện trực tuyến, đặc biệt thiết kế để xử lý tải cao trong các đợt mở bán vé "flash sale".
-*   **Khách hàng là ai?** 
-    Khách hàng (End-user) là những khán giả cần trải nghiệm mua vé mượt mà. Khách hàng doanh nghiệp (B2B) là các ban tổ chức sự kiện cần một nền tảng ổn định, không sập nguồn để bảo vệ hình ảnh thương hiệu.
-*   **Giải quyết vấn đề gì?**
-    Các hệ thống bán vé truyền thống thường sập máy chủ hoặc cạn kiệt kết nối DB (connection exhaustion) khi có hàng ngàn truy cập đồng thời. Ticketing-App giải quyết bài toán này bằng kiến trúc phân rã kết hợp hàng đợi, đảm bảo không rớt đơn hàng.
+*   **Mục đích hệ thống:**
+    **Ticketing-App** được phát triển như một nền tảng đặt vé sự kiện trực tuyến chuyên dụng, tối ưu hóa đặc biệt cho việc xử lý lượng truy cập cực lớn (high concurrency) phát sinh trong các đợt mở bán vé giới hạn thời gian ("flash sale").
+*   **Đối tượng khách hàng:**
+    Nền tảng hướng đến hai nhóm đối tượng chính: khán giả mua vé (End-users) cần một trải nghiệm đặt chỗ mượt mà, không giật lag; và các đơn vị tổ chức sự kiện (khách hàng B2B) yêu cầu một hệ thống có tính sẵn sàng cao, hoạt động ổn định để bảo vệ uy tín thương hiệu.
+*   **Vấn đề giải quyết:**
+    Các hệ thống bán vé truyền thống thường gặp sự cố sập máy chủ hoặc cạn kiệt kết nối cơ sở dữ liệu (database connection exhaustion) khi hàng ngàn người dùng truy cập cùng lúc. **Ticketing-App** giải quyết triệt để vấn đề này bằng kiến trúc phân rã (decoupled architecture) kết hợp hàng đợi SQS, cam kết không bỏ lỡ hay làm thất lạc bất kỳ đơn hàng nào của khách hàng.
+
 
 #### 2.2 Mục tiêu cụ thể
 *   **Output mong muốn:** 
@@ -69,7 +70,7 @@ Hệ thống được thiết kế theo mô hình VPC chuẩn với các lớp m
 | :--- | :--- | :--- |
 | **Compute** | Elastic Beanstalk | Quản lý triển khai tự động hai môi trường độc lập: Backend API và Worker xử lý hàng đợi. |
 | **Compute** | EC2 Instances | Chạy hệ điều hành Amazon Linux 2023, môi trường Node.js 24, cấu hình loại `t3.micro`. |
-| **Compute** | Auto Scaling Group | Đảm bảo tính sẵn sàng cao với cấu hình tối thiểu 2 instances và tự động nhân rộng lên tối đa 4 instances khi chịu tải cao. |
+| **Compute** | Auto Scaling Group | Cấu hình co giãn tự động từ tối thiểu 2 đến tối đa 4 instances. Kích hoạt scale-out khi CPU trung bình vượt ngưỡng 70% trong 3 phút (đối với API Backend) hoặc khi số lượng Message Backlog trong hàng đợi SQS tăng cao (đối với Worker). |
 | **Frontend** | Amazon S3 | Lưu trữ mã nguồn tĩnh (HTML, CSS, JS) cho trang web frontend, cấu hình Static Website Hosting để tối ưu hóa chi phí. |
 | **Database** | RDS PostgreSQL | Cấu hình cơ sở dữ liệu phiên bản 18.3, loại instance `db.t3.small`, dung lượng 20GB gp3, bảo mật bằng mã hóa KMS và thiết lập Multi-AZ để dự phòng nóng. |
 | **Database Proxy**| RDS Proxy | Giảm thiểu overhead kết nối thông qua Connection Pooling, bảo vệ cơ sở dữ liệu không bị cạn kiệt tài nguyên kết nối. |
@@ -172,7 +173,7 @@ Hệ thống ứng dụng kiến trúc **Event-Driven Microservices** nhằm tá
 #### 8.2 Đặc Điểm Kiến Trúc (Architectural Strengths)
 
 *   **Khả năng mở rộng & Phân rã (Scalability & Decoupling):** 
-    Frontend, Backend API và Worker hoạt động độc lập, cho phép scale tự động dựa trên mức độ tải riêng biệt. SQS đóng vai trò làm bộ đệm (buffer) hấp thụ các đợt tải đột biến, bảo vệ database PostgreSQL khỏi tình trạng quá tải kết nối.
+    Frontend, Backend API và Worker hoạt động độc lập, cho phép tự động co giãn (Auto Scaling) độc lập theo nhu cầu thực tế của từng tầng. Tầng Backend API tự động co giãn dựa trên ngưỡng tải CPU (scale-out khi CPU > 70%), trong khi tầng Worker co giãn theo số lượng Message Backlog trong SQS. SQS đóng vai trò làm bộ đệm (buffer) hấp thụ các đợt tải đột biến, bảo vệ database PostgreSQL khỏi tình trạng quá tải kết nối.
 *   **Đảm bảo Tính nhất quán (Data Consistency):** 
     Sự kết hợp giữa cơ chế lock của Redis và khả năng xử lý tuần tự (exactly-once) của SQS FIFO đảm bảo tính nhất quán dữ liệu cho các giao dịch đặt vé. Các giao dịch lỗi được chuyển tiếp vào Dead Letter Queue (DLQ) để phục vụ việc phân tích.
 *   **Công nghệ Frontend Hiện đại:** 

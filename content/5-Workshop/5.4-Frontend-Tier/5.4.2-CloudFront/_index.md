@@ -36,20 +36,16 @@ After creating the S3 Buckets, we will configure an **Amazon CloudFront Distribu
 
      * **Origin settings**: Select **Use recommended origin settings** (CloudFront will automatically create an OAC configuration to securely connect to the S3 Private Bucket).
 
-{{% notice warning %}}
-Note: The S3 Bucket must be a regular bucket (REST endpoint), and Static Website Hosting **must not be enabled** because OAC does not support Website Endpoints.
-{{% /notice %}}
 
    ![CloudFront Origin Settings](/images/5-Workshop/5.4-Frontend-Tier/cf_origin_settings.jpg)
 
-   * **Security protections**:
-     * **AWS WAF**: Keep the default configuration and click **Next**.
+   * **Web Application Firewall (WAF)** (under **Security protections**):
+     * Keep the default security protections settings as is (AWS WAF is automatically enabled to protect your website against common vulnerabilities). Click **Next**.
 
    ![CloudFront Security Settings](/images/5-Workshop/5.4-Frontend-Tier/cf_waf_settings.jpg)
-
-   {{% notice note %}}
-   Note: Since **Project type = Single website or app** has been selected, AWS will automatically apply the appropriate default configuration for the CloudFront Distribution. For this workshop, just keep the default values and click **Next** to continue. Settings such as Cache Behavior, Viewer Protocol Policy, or Allowed HTTP Methods can be edited later if needed.
-   {{% /notice %}}
+{{% notice note %}}
+Note: Since **Project type = Single website or app** has been selected, AWS will automatically apply the appropriate default configuration for the CloudFront Distribution. For this workshop, just keep the default values and click **Next** to continue. Settings such as Cache Behavior, Viewer Protocol Policy, or Allowed HTTP Methods can be edited later if needed.
+{{% /notice %}}
 
 4. Click **Create distribution** at the bottom.
 
