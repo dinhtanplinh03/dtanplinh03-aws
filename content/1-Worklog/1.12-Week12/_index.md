@@ -1,57 +1,35 @@
 ---
-title: "Week 12 Worklog"
+title: "Worklog Week 12"
 date: 2024-01-01
 weight: 2
 chapter: false
 pre: " <b> 1.12. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 12 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Test and validate the message processing workflow as well as the monitoring system.
+
+* Prepare the project for deployment and the final presentation.
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Day | Task | Start Date | Completion Date | Reference Material |
+| ---- | ---- | ---------- | --------------- | ------------------ |
+| 77 | - Test the complete message flow between Amazon SNS and Amazon SQS.<br>- Verify the accuracy of message transmission and processing. | 06/29/2026 | 06/29/2026 | https://docs.aws.amazon.com/ |
+| 78 | - Analyze CloudWatch Logs and Metrics.<br>- Verify the operation of CloudWatch Alarms under simulated scenarios. | 06/30/2026 | 06/30/2026 | https://docs.aws.amazon.com/cloudwatch/ |
+| 79 | - Troubleshoot issues identified during testing.<br>- Optimize the configuration of Amazon SNS, Amazon SQS, and Amazon CloudWatch. | 07/01/2026 | 07/01/2026 | https://docs.aws.amazon.com/ |
+| 80 | - Finalize the deployment documentation and user guide.<br>- Review the overall AWS architecture and configuration. | 07/02/2026 | 07/02/2026 | https://docs.aws.amazon.com/ |
+| 81 | - Prepare the project report and presentation materials.<br>- Perform a final system verification before project handover.<br>- Summarize the internship outcomes. | 07/03/2026 | 07/03/2026 | https://docs.aws.amazon.com/ |
 
-### Week 12 Achievements:
+### Achievements in Week 12:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Successfully tested and validated the complete message processing workflow between Amazon SNS and Amazon SQS.
 
-* Successfully created and configured an AWS Free Tier account.
+* Verified that the Amazon CloudWatch monitoring system, including Logs, Metrics, and Alarms, operates reliably.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* Resolved issues identified during testing and optimized the overall system configuration.
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+* Completed the technical documentation and deployment guide.
 
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Finalized the project and prepared all required materials for deployment, project handover, and the final presentation.

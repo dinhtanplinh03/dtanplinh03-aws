@@ -31,6 +31,6 @@ Thông thường, nhật ký công việc được thực hiện trong khoảng 
 
 **Tuần 10:** [Lập kế hoạch và thiết kế kiến trúc cho workshop AWS, xác định phạm vi dự án, các mốc quan trọng và hoàn thiện kiến trúc giải pháp dựa trên phản hồi từ mentor.](1.10-week10/)
 
-**Tuần 11:** [Triển khai và kiểm thử Amazon SNS, Amazon SQS và Amazon CloudWatch nhằm xây dựng cơ chế nhắn tin bất đồng bộ, giám sát hệ thống và ghi log ứng dụng.](1.11-week11/)
+**Tuần 11:** [Triển khai cơ chế gửi nhận tin nhắn bất đồng bộ bằng Amazon SNS và Amazon SQS, đồng thời cấu hình Amazon CloudWatch để giám sát và ghi log hệ thống.](1.11-week11/)
 
-**Tuần 12:** [...]
+**Tuần 12:** [Kiểm thử và xác thực luồng xử lý tin nhắn cùng hệ thống giám sát, hoàn thiện dự án và chuẩn bị cho giai đoạn triển khai cũng như buổi trình bày cuối cùng.](1.12-week12/)

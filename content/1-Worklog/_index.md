@@ -30,6 +30,6 @@ Typically, the internship lasts for **three months**, and the weekly worklog is 
 
 **Week 10:** [Planning and Designing the AWS Workshop Architecture, Defining the Project Scope and Milestones, and Refining the Solution Architecture Based on Mentor Feedback](1.10-week10/)
 
-**Week 11:** [Implementing and Testing Amazon SNS, Amazon SQS, and Amazon CloudWatch to Build an Asynchronous Messaging System, Monitor the Infrastructure, and Collect Application Logs](1.11-week11/)
+**Week 11:** [Implementing an Asynchronous Messaging System Using Amazon SNS and Amazon SQS, and Configuring Amazon CloudWatch for Monitoring and Logging](1.11-week11/)
 
-**Week 12:** [...]
+**Week 12:** [Testing and Validating the Asynchronous Messaging Workflow and Monitoring System, Finalizing the Project, and Preparing for Deployment and the Final Presentation](1.12-Week12/)
