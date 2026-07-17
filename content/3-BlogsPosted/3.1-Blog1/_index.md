@@ -65,10 +65,10 @@ The entire infrastructure is deployed using Infrastructure as Code (IaC), making
 
 Through Cloud Game Development Toolkit, AWS helps game studios build a modern, flexible, and cost-effective development environment, thereby accelerating the product launch process.
 
-![](img/1.png)
+![](/images/3-BlogsPosted/1/img/1.png)
 
-![](img/2.png)
+![](/images/3-BlogsPosted/1/img/2.png)
 
-![](img/3.png)
+![](/images/3-BlogsPosted/1/img/3.png)
 
 **Link:** https://aws.amazon.com/vi/blogs/gametech/game-development-infrastructure-simplified-with-aws-game-dev-toolkit/ 

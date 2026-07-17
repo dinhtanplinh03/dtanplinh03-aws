@@ -100,8 +100,8 @@ Amazon GameLift Servers Multi-Build is a useful solution for game development te
 
 For game projects in the Alpha, Beta, or new feature development stages, this is a solution worth exploring and implementing.
 
-![](img/1.png)
+![](/images/3-BlogsPosted/3/img/1.png)
 
-![](img/2.png)
+![](/images/3-BlogsPosted/3/img/2.png)
 
 **Link:** https://aws.amazon.com/vi/blogs/gametech/rapid-game-server-iteration-on-amazon-gamelift-servers/

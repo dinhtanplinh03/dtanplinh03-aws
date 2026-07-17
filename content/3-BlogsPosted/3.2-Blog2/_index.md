@@ -42,10 +42,10 @@ The most impressive aspect of this solution is how it handles "control handoff" 
 
 This architecture not only optimizes the internal playtesting process of studios but also opens up enormous potential for media campaigns: where stream viewers can directly participate in the game (e.g., vote on direction, spawn monsters) right in their browser without experiencing lag.
 
-![](img/1.png)
+![](/images/3-BlogsPosted/2/img/1.png)
 
-![](img/2.png)
+![](/images/3-BlogsPosted/2/img/2.png)
 
-![](img/3.png)
+![](/images/3-BlogsPosted/2/img/3.png)
 
 **Link:** https://aws.amazon.com/blogs/gametech/creating-interactive-gaming-experiences-with-amazon-gamelift-streams-and-amazon-interactive-video-service/
